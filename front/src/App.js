@@ -1,5 +1,14 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import TestPage from './pages/TestPage/TestPage';
+
 function App() {
-	return <div className="App">app</div>;
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<TestPage />} />
+			</Routes>
+		</BrowserRouter>
+	);
 }
 
 export default App;
