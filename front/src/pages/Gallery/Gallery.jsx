@@ -1,5 +1,5 @@
 import React from 'react';
-import { Content, Header, Body } from './Gallery.style';
+import { Content, Header, Body, Mypage, Login, Menu } from './Gallery.style';
 import SelectBox from './SelectBox';
 
 const OPTION = [
@@ -13,7 +13,11 @@ const Gallery = () => {
 	return (
 		<Content>
 			<Header>
-				<input type="button" value="Mypage" />
+				<Menu>
+					<Mypage>Mypage</Mypage>
+					<Login>Login</Login>
+				</Menu>
+				main
 			</Header>
 			<Body>
 				<SelectBox option={OPTION} />
