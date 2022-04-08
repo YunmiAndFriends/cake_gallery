@@ -9,16 +9,12 @@ const Content = styled.div`
 
 const Header = styled.div`
 	display: flex;
-	flex-direction: row-reverse;
 	height: 30%;
 	justify-content: space-between;
 `;
 
-const Body = styled.div`
+const Logo = styled.div`
 	display: flex;
-	flex-direction: column;
-	height: 100vh;
-	align-items: flex-end;
 `;
 
 const Menu = styled.div`
@@ -26,9 +22,21 @@ const Menu = styled.div`
 `;
 
 const Mypage = styled.button`
+	width: 80px;
 	margin: 36px;
 `;
 
-const Login = styled.button``;
+const Login = styled.button`
+	width: 80px;
+`;
 
-export { Content, Header, Body, Mypage, Login, Menu };
+const Store = styled.div`
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	align-items: flex-end;
+`;
+
+const StoreGalleryContainer = styled.div``;
+
+export { Content, Header, Store, Mypage, Login, Menu, Logo, StoreGalleryContainer };
