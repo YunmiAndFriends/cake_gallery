@@ -30,6 +30,10 @@ const Login = styled.button`
 	width: 80px;
 `;
 
+const SelectBoxContainer = styled.div`
+	margin-bottom: 20px;
+`;
+
 const Store = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -39,4 +43,14 @@ const Store = styled.div`
 
 const StoreGalleryContainer = styled.div``;
 
-export { Content, Header, Store, Mypage, Login, Menu, Logo, StoreGalleryContainer };
+export {
+	Content,
+	Header,
+	Store,
+	Mypage,
+	Login,
+	Menu,
+	Logo,
+	StoreGalleryContainer,
+	SelectBoxContainer,
+};

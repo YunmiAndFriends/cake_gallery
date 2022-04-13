@@ -1,12 +1,12 @@
 import React from 'react';
-import { StoreGalleryWrap, ThumbnailImg } from './StoreGallery.style';
+import { StoreGalleryWrap, ThumbnailImg, Storename, Storeinfo } from './StoreGallery.style';
 
 const StoreGallery = ({ id, name, thumbnail, content }) => {
 	return (
 		<StoreGalleryWrap>
 			<ThumbnailImg src={thumbnail} />
-			<p>{name}</p>
-			<p>{content}</p>
+			<Storename>{name}</Storename>
+			<Storeinfo>{content}</Storeinfo>
 		</StoreGalleryWrap>
 	);
 };
