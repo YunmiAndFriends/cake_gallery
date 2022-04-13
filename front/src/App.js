@@ -1,12 +1,14 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import TestPage from './pages/TestPage/TestPage';
+// import Cover from './pages/Main/cover';
 import Gallery from './pages/Gallery/Gallery';
+import Main from './pages/Main/main';
 
 function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<TestPage />} />
+				{/* <Route path="/" element={<Cover />} /> */}
+				<Route path="/" element={<Main />} />
 				<Route path="/AllGallery" element={<Gallery />} />
 			</Routes>
 		</BrowserRouter>
