@@ -41,7 +41,13 @@ const Store = styled.div`
 	align-items: flex-end;
 `;
 
-const StoreGalleryContainer = styled.div``;
+const StoreGalleryContainer = styled.div`
+	display: flex;
+	width: -webkit-fill-available;
+	justify-content: space-around;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+`;
 
 export {
 	Content,

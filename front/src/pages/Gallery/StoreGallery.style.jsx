@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StoreGalleryWrap = styled.div`
 	border: 1px solid black;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 `;
 
 const ThumbnailImg = styled.img`
