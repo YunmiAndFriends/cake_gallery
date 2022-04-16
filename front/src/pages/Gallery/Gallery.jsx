@@ -12,6 +12,7 @@ import {
 } from './Gallery.style';
 import SelectBox from './SelectBox';
 import StoreGallery from './StoreGallery';
+import { Link } from 'react-router-dom';
 
 const OPTION = [
 	{ value: 'famous', name: '인기순' },
@@ -79,11 +80,17 @@ const galleryData = [
 	},
 ];
 
+const OnClickMain = () => {
+	document.location.href('/');
+};
+
 const Gallery = () => {
 	return (
 		<Content>
 			<Header>
-				<Logo>main</Logo>
+				<Link to="/">
+					<Logo onClick={OnClickMain}>main</Logo>
+				</Link>
 				<Menu>
 					<Mypage>Mypage</Mypage>
 					<Login>Login</Login>

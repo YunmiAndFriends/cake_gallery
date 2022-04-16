@@ -13,8 +13,9 @@ const Header = styled.div`
 	justify-content: space-between;
 `;
 
-const Logo = styled.div`
-	display: flex;
+const Logo = styled.button`
+	width: 100px;
+	height: 40px;
 `;
 
 const Menu = styled.div`
