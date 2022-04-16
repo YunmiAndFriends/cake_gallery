@@ -43,11 +43,17 @@ const Store = styled.div`
 `;
 
 const StoreGalleryContainer = styled.div`
-	display: flex;
-	width: -webkit-fill-available;
-	justify-content: space-around;
+	/* display: flex;
 	justify-content: flex-start;
-	flex-wrap: wrap;
+	flex-wrap: wrap; */
+
+	width: -webkit-fill-available;
+	margin: 40px;
+	padding: 50px;
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	background-color: #ca282818;
 `;
 
 export {

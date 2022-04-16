@@ -4,10 +4,13 @@ const StoreGalleryWrap = styled.div`
 	border: 1px solid black;
 	display: flex;
 	flex-direction: column;
+	margin: 5px;
+	background-color: white;
+	height: 100%;
 `;
 
 const ThumbnailImg = styled.img`
-	width: 200px;
+	width: -webkit-fill-available;
 	height: 200px;
 `;
 
