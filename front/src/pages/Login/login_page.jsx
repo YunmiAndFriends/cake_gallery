@@ -1,7 +1,10 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
 	Container,
 	Title,
+	Image,
 	Text,
 	InputDivWrap,
 	Input,
@@ -10,25 +13,31 @@ import {
 	LoginButton,
 	JoinButton,
 } from './login_style';
+import LoginLogo from '../../assets/cake-piece.png';
 import { BiUser } from 'react-icons/bi';
 import { MdPassword } from 'react-icons/md';
 
 function login_page() {
+	let navigate = useNavigate();
+	function handleClick() {
+		navigate('/join_page');
+	}
 	return (
 		<Container>
-			<Title>로그인 페이지</Title>
-			<Text>로그인 페이지 입니다.</Text>
+			<Title>
+				<Image src={LoginLogo} />
+			</Title>
+			<Text>Welcome to Cake Gallery</Text>
 			<InputDivWrap>
-				<Input>
-					<BiUser size={24} />
-				</Input>
-				<Input>
-					<MdPassword size={24} />
-				</Input>
+				<BiUser size={24} />
+				<Input />
 			</InputDivWrap>
-
-			<LoginButton>로그인</LoginButton>
-			<JoinButton>회원가입</JoinButton>
+			<InputDivWrap>
+				<MdPassword size={24} />
+				<Input type="password" />
+			</InputDivWrap>
+			<LoginButton>Login</LoginButton>
+			<JoinButton onClick={handleClick}>회원가입</JoinButton>
 		</Container>
 	);
 }
