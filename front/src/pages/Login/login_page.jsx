@@ -11,6 +11,7 @@ import {
 	InputLogin,
 	InputJoin,
 	LoginButton,
+	JoinButtonWrap,
 	JoinButton,
 } from './login_style';
 import LoginLogo from '../../assets/cake-piece.png';
@@ -20,7 +21,10 @@ import { MdPassword } from 'react-icons/md';
 function login_page() {
 	let navigate = useNavigate();
 	function handleClick() {
-		navigate('/join_page');
+		navigate('/customer_signup');
+	}
+	function signUpClick() {
+		navigate('/sign_up');
 	}
 	return (
 		<Container>
@@ -37,7 +41,10 @@ function login_page() {
 				<Input type="password" />
 			</InputDivWrap>
 			<LoginButton>Login</LoginButton>
-			<JoinButton onClick={handleClick}>회원가입</JoinButton>
+			<JoinButtonWrap>
+				<JoinButton onClick={handleClick}>손님으로 회원가입</JoinButton>
+				<JoinButton onClick={signUpClick}> 사장님으로 회원가입</JoinButton>
+			</JoinButtonWrap>
 		</Container>
 	);
 }

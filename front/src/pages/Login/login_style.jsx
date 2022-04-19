@@ -45,7 +45,15 @@ const LoginButton = styled.button`
 	width: 244px;
 	height: 40px;
 	display: block;
-	margin-top: 20px;
+	margin-top: 24px;
+	margin-bottom: 400px;
+`;
+
+const JoinButtonWrap = styled.div`
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	bottom: -4px;
 `;
 
 const JoinButton = styled.button`
@@ -55,8 +63,6 @@ const JoinButton = styled.button`
 	display: block;
 	border: none;
 	font-size: 16px;
-	position: absolute;
-	bottom: 0;
 	margin-bottom: 16px;
 `;
 
@@ -70,5 +76,6 @@ export {
 	InputLogin,
 	InputJoin,
 	LoginButton,
+	JoinButtonWrap,
 	JoinButton,
 };
