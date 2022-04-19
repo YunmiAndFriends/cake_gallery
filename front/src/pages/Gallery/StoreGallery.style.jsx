@@ -6,12 +6,12 @@ const StoreGalleryWrap = styled.div`
 	flex-direction: column;
 	margin: 5px;
 	background-color: white;
-	height: 100%;
+	height: 96%;
 `;
 
 const ThumbnailImg = styled.img`
 	width: -webkit-fill-available;
-	height: 200px;
+	height: 250px;
 `;
 
 const Storename = styled.div`

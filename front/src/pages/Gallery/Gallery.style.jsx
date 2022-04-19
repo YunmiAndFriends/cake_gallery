@@ -43,13 +43,13 @@ const Store = styled.div`
 `;
 
 const StoreGalleryContainer = styled.div`
-	/* display: flex;
-	justify-content: flex-start;
-	flex-wrap: wrap; */
+	/* display: flex; */
+	/* justify-content: flex-start; */
+	/* flex-wrap: wrap; */
 
 	width: -webkit-fill-available;
 	margin: 40px;
-	padding: 50px;
+	padding: 45px;
 	display: grid;
 	grid-template-rows: 1fr;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
