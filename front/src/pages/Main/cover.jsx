@@ -1,17 +1,5 @@
 import React from 'react';
-import {
-	Content,
-	Header,
-	Menu,
-	Mypage,
-	Login,
-	Body,
-	Button,
-	Img,
-	Text,
-	Group,
-} from './cover_style';
-import coverImage from '../../assets/back_cover.png';
+import { Content, Header, Menu, Mypage, Login, Body, Button, Text, Text2 } from './cover_style';
 import { Link } from 'react-router-dom';
 
 const click = () => {
@@ -28,13 +16,11 @@ const cover = () => {
 				</Menu>
 			</Header>
 			<Body>
-				<Img src={coverImage} />
-				<Group>
-					<Text>특별한 날 소중함을 더해주는 하나뿐인 케이크</Text>
-					<Link to="/main">
-						<Button onClick={click}>구경하러 가기</Button>
-					</Link>
-				</Group>
+				<Text>특별한 날 소중함을 더해주는 </Text>
+				<Text2>하나뿐인 케이크</Text2>
+				<Link to="/main">
+					<Button onClick={click}>구경하러 가기</Button>
+				</Link>
 			</Body>
 		</Content>
 	);

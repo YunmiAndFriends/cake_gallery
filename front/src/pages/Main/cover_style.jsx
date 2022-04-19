@@ -20,6 +20,9 @@ const Body = styled.div`
 	flex-direction: column;
 	height: 100vh;
 	text-align: center;
+	justify-content: center;
+	font-size: 200%;
+	background-image: url(${coverImage});
 `;
 
 const Menu = styled.div`
@@ -29,18 +32,20 @@ const Menu = styled.div`
 const Mypage = styled.button`
 	margin: 36px;
 `;
-const Img = styled.div`
-	background-image: url(${coverImage});
-	width: 100%;
-	height: 100%;
-`;
 
-const Group = styled.div`
-	flex-direction: row;
-`;
+// const Group = styled.div`
+// 	flex-direction: row;
+// 	justify-content: center;
+// `;
 
 const Text = styled.div`
 	text-align: center;
+	color: whitesmoke;
+`;
+
+const Text2 = styled.div`
+	text-align: center;
+	color: whitesmoke;
 `;
 
 const Login = styled.button``;
@@ -52,4 +57,4 @@ const Button = styled.button`
 	display: block;
 `;
 
-export { Content, Header, Body, Mypage, Login, Menu, Button, Img, Text, Group };
+export { Content, Header, Body, Mypage, Login, Menu, Button, Text, Text2 };
