@@ -3,11 +3,11 @@ import styled from 'styled-components';
 const Container = styled.div`
 	display: flex;
 	width: 100vw;
-	height: 100vh;
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
 	padding-top: 124px;
+	overflow: hidden;
 `;
 
 const Title = styled.div``;
@@ -36,6 +36,8 @@ const Input = styled.input`
 	}
 	margin-left: 16px;
 	font-size: 24px;
+	background-color: #ffffff13;
+	opacity: 1;
 `;
 
 const InputLogin = styled.h2``;
@@ -47,6 +49,9 @@ const LoginButton = styled.button`
 	display: block;
 	margin-top: 24px;
 	margin-bottom: 400px;
+	background-color: #ffffff13;
+	opacity: 1;
+	border-radius: 4px;
 `;
 
 const JoinButtonWrap = styled.div`
@@ -54,6 +59,8 @@ const JoinButtonWrap = styled.div`
 	bottom: 0;
 	display: flex;
 	bottom: -4px;
+	background-color: #ffffff13;
+	opacity: 1;
 `;
 
 const JoinButton = styled.button`
@@ -64,6 +71,7 @@ const JoinButton = styled.button`
 	border: none;
 	font-size: 16px;
 	margin-bottom: 16px;
+	background: none;
 `;
 
 export {
