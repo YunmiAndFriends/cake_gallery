@@ -7,8 +7,13 @@ const Container = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
-	padding-top: 320px;
+	padding-top: 200px;
 	margin-left: -124px;
+`;
+
+const Title = styled.div`
+	font-size: 32px;
+	margin-bottom: 88px;
 `;
 
 const ContainerWrap = styled.div`
@@ -42,4 +47,4 @@ const Input = styled.input`
 	font-size: 16px;
 `;
 
-export { Container, ContainerWrap, Text, InputDivWrap, Input };
+export { Container, Title, ContainerWrap, Text, InputDivWrap, Input };

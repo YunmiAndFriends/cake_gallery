@@ -1,10 +1,18 @@
 import React from 'react';
-import { Container, ContainerWrap, Text, InputDivWrap, Input } from './customer_signup_style';
+import {
+	Container,
+	Title,
+	ContainerWrap,
+	Text,
+	InputDivWrap,
+	Input,
+} from './customer_signup_style';
 import SignUpInfo from './sign_up_info';
 
 function signup_page() {
 	return (
 		<Container>
+			<Title>손님 회원가입 페이지</Title>
 			<ContainerWrap>
 				<SignUpInfo text="이름" />
 				<SignUpInfo text="전화번호" />
