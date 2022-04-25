@@ -80,16 +80,12 @@ const galleryData = [
 	},
 ];
 
-const OnClickMain = () => {
-	document.location.href('/');
-};
-
 const Gallery = () => {
 	return (
 		<Content>
 			<Header>
 				<Link to="/">
-					<Logo onClick={OnClickMain}>main</Logo>
+					<Logo>main</Logo>
 				</Link>
 				<Menu>
 					<Mypage>Mypage</Mypage>

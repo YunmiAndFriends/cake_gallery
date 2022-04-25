@@ -54,6 +54,9 @@ const StoreGalleryContainer = styled.div`
 	grid-template-rows: 1fr;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	background-color: #ca282818;
+	justify-content: center;
+	align-items: center;
+	justify-items: center;
 `;
 
 export {

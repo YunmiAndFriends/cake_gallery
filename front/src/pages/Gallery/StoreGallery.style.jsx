@@ -5,21 +5,23 @@ const StoreGalleryWrap = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin: 5px;
-	background-color: white;
-	height: 96%;
+	height: 100%;
+	justify-content: space-around;
+	align-items: flex-start;
 `;
 
 const ThumbnailImg = styled.img`
 	width: -webkit-fill-available;
 	height: 250px;
+	margin: 4px;
 `;
 
 const Storename = styled.div`
-	display: flex;
+	-webkit-text-decoration-line: none;
 `;
 
 const Storeinfo = styled.div`
-	display: flex;
+	text-decoration-line: none;
 `;
 
 export { StoreGalleryWrap, ThumbnailImg, Storename, Storeinfo };
