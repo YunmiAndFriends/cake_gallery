@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import profile from '../../assets/profile.png';
 
 const Container = styled.div`
 	display: flex;
@@ -7,7 +8,7 @@ const Container = styled.div`
 `;
 const Header = styled.div`
 	display: flex;
-	height: 8%;
+	height: 10%;
 	justify-content: space-between;
 `;
 
@@ -29,8 +30,72 @@ const Login = styled.button`
 	width: 80px;
 `;
 
-const Content = styled.div``;
+const Content = styled.div`
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+`;
 
-const StoreInfo = styled.div``;
+const StoreIntro = styled.div`
+	display: flex;
+	justify-content: space-evenly;
+`;
 
-export { Container, Header, Content, Logo, Menu, Mypage, Login, StoreInfo };
+// const StoreInfoImage = styled.image`
+// 	display: flex;
+// 	width: 50vw;
+// 	height: 50vh;
+// `;
+
+const StoreInfoImage = styled.div`
+	background-image: url(${profile});
+	width: 180px;
+	height: 180px;
+	border-radius: 70%;
+	overflow: hidden;
+`;
+
+const StoreInfo = styled.div`
+	display: flex;
+	width: 300px;
+	height: 40vh;
+`;
+
+const SelectButton = styled.div`
+	display: flex;
+	height: 10vh;
+`;
+
+const GalleryButton = styled.button`
+	width: 800px;
+	border-radius: 3cm;
+	margin-right: 8px;
+`;
+
+const ReviewButton = styled.button`
+	width: 800px;
+	border-radius: 3cm;
+`;
+
+const StoreGalleryReview = styled.div`
+	display: flex;
+	height: 100vh;
+`;
+
+export {
+	Container,
+	Header,
+	Content,
+	Logo,
+	Menu,
+	Mypage,
+	Login,
+	StoreIntro,
+	StoreGalleryReview,
+	StoreInfoImage,
+	StoreInfo,
+	GalleryButton,
+	ReviewButton,
+	SelectButton,
+};
