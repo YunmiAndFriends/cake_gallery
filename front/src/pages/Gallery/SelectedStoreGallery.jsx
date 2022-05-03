@@ -1,8 +1,8 @@
 import React from 'react';
-import { StoreGalleryWrap, ThumbnailImg, Storename, Storeinfo } from './StoreGallery.style';
+import { StoreGalleryWrap, ThumbnailImg, Storename, Storeinfo } from './SelectedStoreGallery.style';
 import { Link } from 'react-router-dom';
 
-const StoreGallery = ({ id, name, thumbnail, content }) => {
+const SelectedStoreGallery = ({ id, name, thumbnail, content }) => {
 	return (
 		<Link to="/Store">
 			<StoreGalleryWrap>
@@ -14,4 +14,4 @@ const StoreGallery = ({ id, name, thumbnail, content }) => {
 	);
 };
 
-export default StoreGallery;
+export default SelectedStoreGallery;
