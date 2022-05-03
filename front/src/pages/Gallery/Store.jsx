@@ -17,6 +17,7 @@ import {
 	SelectButton,
 } from './Store.style';
 import profile from '../../assets/profile.png';
+import StoreGallery from './StoreGallery';
 
 const Store = () => {
 	return (
