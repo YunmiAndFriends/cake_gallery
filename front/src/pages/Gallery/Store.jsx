@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
 	Container,
@@ -18,8 +18,11 @@ import {
 } from './Store.style';
 import profile from '../../assets/profile.png';
 import StoreGallery from './StoreGallery';
+import StoreReview from './StoreReview';
 
 const Store = () => {
+	const [viewGallery, setViewGallery] = useState(true);
+
 	return (
 		<Container>
 			<Header>
@@ -37,10 +40,13 @@ const Store = () => {
 					<StoreInfo>가게 이름, 주소, 소개!</StoreInfo>
 				</StoreIntro>
 				<SelectButton>
-					<GalleryButton>갤러리</GalleryButton>
-					<ReviewButton>후기</ReviewButton>
+					<GalleryButton onClick={() => setViewGallery(true)}>갤러리</GalleryButton>
+					<ReviewButton onClick={() => setViewGallery(false)}>후기</ReviewButton>
 				</SelectButton>
-				<StoreGalleryReview>사진, 후기 번갈아 나오는 페이지</StoreGalleryReview>
+				<StoreGalleryReview>
+					{' '}
+					{viewGallery ? <StoreGallery /> : <StoreReview />}{' '}
+				</StoreGalleryReview>
 			</Content>
 		</Container>
 	);

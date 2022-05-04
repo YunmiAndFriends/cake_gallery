@@ -11,7 +11,7 @@ import {
 	SelectBoxContainer,
 } from './Gallery.style';
 import SelectBox from './SelectBox';
-import StoreGallery from './StoreGallery';
+import SelectedStoreGallery from './SelectedStoreGallery';
 import { Link } from 'react-router-dom';
 
 const OPTION = [
@@ -98,7 +98,7 @@ const Gallery = () => {
 				</SelectBoxContainer>
 				<StoreGalleryContainer>
 					{galleryData.map(gallery => (
-						<StoreGallery
+						<SelectedStoreGallery
 							key={gallery.id}
 							name={gallery.name}
 							thumbnail={gallery.thumbnail}

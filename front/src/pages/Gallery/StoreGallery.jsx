@@ -1,8 +1,8 @@
 import React from 'react';
-import { container } from './StoreGallery.style';
+import { Container } from './StoreGallery.style';
 
 const StoreGallery = () => {
-	return <container>ppp</container>;
+	return <Container>갤러리 페이지입니다.</Container>;
 };
 
 export default StoreGallery;
