@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import profile from '../../assets/profile.png';
+import profile from '../../assets/profile.jpg';
 
 const Container = styled.div`
 	display: flex;
@@ -40,6 +40,7 @@ const Content = styled.div`
 const StoreIntro = styled.div`
 	display: flex;
 	justify-content: space-evenly;
+	margin-bottom: 20px;
 `;
 
 // const StoreInfoImage = styled.image`
@@ -50,10 +51,11 @@ const StoreIntro = styled.div`
 
 const StoreInfoImage = styled.div`
 	background-image: url(${profile});
-	width: 180px;
-	height: 180px;
+	width: 280px;
+	height: 280px;
 	border-radius: 70%;
 	overflow: hidden;
+	align-content: center;
 `;
 
 const StoreInfo = styled.div`

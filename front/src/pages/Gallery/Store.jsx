@@ -16,7 +16,7 @@ import {
 	ReviewButton,
 	SelectButton,
 } from './Store.style';
-import profile from '../../assets/profile.png';
+import profile from '../../assets/profile.jpg';
 import StoreGallery from './StoreGallery';
 import StoreReview from './StoreReview';
 
