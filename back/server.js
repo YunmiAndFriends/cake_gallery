@@ -2,7 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const { sequelize } = require("./libs/models");
 
-const authRouter = require("./routes/auth");
+const authRouter = require("./Apps/routes/auth");
 
 dotenv.config();
 const app = express();
@@ -18,7 +18,7 @@ sequelize
     console.error(err);
   });
 
-app.set("port", process.env.PORT || 5000);
+app.set("port", process.env.PORT || 5500);
 
 app.listen(app.get("port"), () => {
   console.log(app.get("port"), "번 포트에서 대기중");
