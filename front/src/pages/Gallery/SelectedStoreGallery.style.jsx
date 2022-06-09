@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 const StoreGalleryWrap = styled.div`
-	border: 1px solid black;
+	border: 1px solid gray;
+	border-radius: 4px;
+	background-color: #e7eae6c6;
 	display: flex;
 	flex-direction: column;
-	margin: 5px;
+	margin: 16px 40px;
 	height: 100%;
 	justify-content: space-around;
 	align-items: flex-start;
@@ -13,15 +15,16 @@ const StoreGalleryWrap = styled.div`
 const ThumbnailImg = styled.img`
 	width: -webkit-fill-available;
 	height: 250px;
-	margin: 4px;
+	border-radius: 4px 4px 0 0;
 `;
 
 const Storename = styled.div`
-	-webkit-text-decoration-line: none;
+	padding: 16px 8px 8px 8px;
 `;
 
 const Storeinfo = styled.div`
-	text-decoration-line: none;
+	padding: 0 0 8px 8px;
+	color: gray;
 `;
 
 export { StoreGalleryWrap, ThumbnailImg, Storename, Storeinfo };

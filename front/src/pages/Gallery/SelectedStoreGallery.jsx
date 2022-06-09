@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const SelectedStoreGallery = ({ id, name, thumbnail, content }) => {
 	return (
-		<Link to="/Store">
+		<Link style={{ textDecoration: 'none', color: 'black' }} to="/Store">
 			<StoreGalleryWrap>
 				<ThumbnailImg src={thumbnail} />
 				<Storename>{name}</Storename>
