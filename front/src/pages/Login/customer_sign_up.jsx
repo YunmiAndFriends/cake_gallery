@@ -38,14 +38,19 @@ function signup_page() {
 				}
 			}
 		}
-
-		/**
-		 * 변수1 = indexOf 메소드를 통해서 @ 의 문자열 위치
-		 * 변수 1이 -1이면 탈락!
-		 * 변수2 = indexOf 메소드를 통해서 . 이 문자열 위치
-		 * 변수2가 -1이면 탈락!
-		 * 변수1 < 변수2 이면 탈락!!!!!!!!!!!!!!!!!!
-		 */
+		if (e.target.name === 'email') {
+			let onClickAtCheck = e.target.value;
+			if (onClickAtCheck.indexOf('@') === -1) {
+				console.log('@이가 빠짐');
+			}
+			let onClickDotCheck = e.target.value;
+			if (onClickDotCheck.indexOf('.') === -1) {
+				console.log('점이 빠짐');
+			}
+			if (onClickAtCheck.indexOf('.') > onClickDotCheck.indexOf('@')) {
+				console.log('error!');
+			}
+		}
 
 		setUserInfo({
 			...userInfo,
@@ -55,10 +60,9 @@ function signup_page() {
 	};
 
 	const checkPassWord = e => {
-		/**
-		 * if userInfo.pw !== e.target.value
-		 *  => 미안한데 비밀번호가 다름
-		 */
+		if (userInfo.pw !== e.target.value) {
+			console.log('비밀번호 다름!');
+		}
 	};
 
 	return (
