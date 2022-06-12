@@ -19,6 +19,15 @@ import {
 import profile from '../../assets/profile.jpg';
 import StoreGallery from './StoreGallery';
 import StoreReview from './StoreReview';
+import StoreInfoData from './StoreInfoData';
+
+const infoData = [
+	{
+		id: 0,
+		name: '가게명: 졸프의 노예 케이크',
+		content: '주소: 경기도 군포시 한세로 30',
+	},
+];
 
 const Store = () => {
 	const [viewGallery, setViewGallery] = useState(true);
@@ -37,7 +46,17 @@ const Store = () => {
 			<Content>
 				<StoreIntro>
 					<StoreInfoImage src={profile} />
-					<StoreInfo>가게 이름, 주소, 소개!</StoreInfo>
+					<StoreInfo>
+						{infoData.map(gallery => (
+							<StoreInfoData
+								key={gallery.id}
+								name={gallery.name}
+								thumbnail={gallery.thumbnail}
+								content={gallery.content}
+								id={gallery.id}
+							/>
+						))}
+					</StoreInfo>
 				</StoreIntro>
 				<SelectButton>
 					<GalleryButton onClick={() => setViewGallery(true)}>갤러리</GalleryButton>

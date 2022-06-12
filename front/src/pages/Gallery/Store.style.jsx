@@ -31,7 +31,7 @@ const Login = styled.button`
 `;
 
 const Content = styled.div`
-	margin-top: 30px;
+	margin-top: 60px;
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
@@ -40,6 +40,7 @@ const Content = styled.div`
 const StoreIntro = styled.div`
 	display: flex;
 	justify-content: space-evenly;
+	/* justify-content: space-around; */
 	margin-bottom: 20px;
 `;
 
@@ -55,29 +56,36 @@ const StoreInfoImage = styled.div`
 	height: 280px;
 	border-radius: 70%;
 	overflow: hidden;
-	align-content: center;
 `;
 
 const StoreInfo = styled.div`
 	display: flex;
-	width: 300px;
-	height: 40vh;
+	/* width: 50vw; */
+	/* height: 40vh; */
 `;
 
 const SelectButton = styled.div`
 	display: flex;
-	height: 10vh;
+	justify-content: space-around;
+	/* height: 20vh; */
 `;
 
 const GalleryButton = styled.button`
-	width: 800px;
-	border-radius: 3cm;
-	margin-right: 8px;
+	width: 600px;
+	height: 35px;
+	border: 2px solid gray;
+	border-radius: 10px;
+	background-color: #fad3ebfa;
+	font-size: 16px;
 `;
 
 const ReviewButton = styled.button`
-	width: 800px;
-	border-radius: 3cm;
+	width: 600px;
+	height: 35px;
+	border: 2px solid gray;
+	border-radius: 10px;
+	background-color: #fad3ebfa;
+	font-size: 16px;
 `;
 
 const StoreGalleryReview = styled.div`

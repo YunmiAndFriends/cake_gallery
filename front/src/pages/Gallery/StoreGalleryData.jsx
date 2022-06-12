@@ -1,5 +1,5 @@
 import React from 'react';
-import { StoreGalleryWrap, ThumbnailImg, Storename, Storeinfo } from './SelectedStoreGallery.style';
+import { StoreGalleryWrap, ThumbnailImg, Storename, Storeinfo } from './StoreGalleryData.style';
 
 const StoreGalleryDate = ({ id, name, thumbnail, content }) => {
 	return (
