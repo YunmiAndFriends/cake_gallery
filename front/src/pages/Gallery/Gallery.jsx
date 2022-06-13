@@ -8,6 +8,7 @@ import {
 	Menu,
 	Logo,
 	StoreGalleryContainer,
+	Container,
 	SelectBoxContainer,
 } from './Gallery.style';
 import SelectBox from './SelectBox';
@@ -93,19 +94,21 @@ const Gallery = () => {
 				</Menu>
 			</Header>
 			<Store>
-				<SelectBoxContainer>
-					<SelectBox option={OPTION} />
-				</SelectBoxContainer>
 				<StoreGalleryContainer>
-					{galleryData.map(gallery => (
-						<SelectedStoreGallery
-							key={gallery.id}
-							name={gallery.name}
-							thumbnail={gallery.thumbnail}
-							content={gallery.content}
-							id={gallery.id}
-						/>
-					))}
+					<SelectBoxContainer>
+						<SelectBox option={OPTION} />
+					</SelectBoxContainer>
+					<Container>
+						{galleryData.map(gallery => (
+							<SelectedStoreGallery
+								key={gallery.id}
+								name={gallery.name}
+								thumbnail={gallery.thumbnail}
+								content={gallery.content}
+								id={gallery.id}
+							/>
+						))}
+					</Container>
 				</StoreGalleryContainer>
 			</Store>
 		</Content>

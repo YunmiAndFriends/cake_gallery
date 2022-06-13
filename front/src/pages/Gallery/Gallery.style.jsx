@@ -11,6 +11,7 @@ const Header = styled.div`
 	display: flex;
 	height: 30%;
 	justify-content: space-between;
+	border-bottom: 3px solid gray;
 `;
 
 const Logo = styled.button`
@@ -31,26 +32,32 @@ const Login = styled.button`
 	width: 80px;
 `;
 
-const SelectBoxContainer = styled.div`
-	margin-bottom: 20px;
-`;
-
 const Store = styled.div`
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
-	align-items: flex-end;
+	/* align-items: flex-end; */
 `;
 
 const StoreGalleryContainer = styled.div`
 	display: flex;
-	justify-content: flex-start;
+	flex-direction: column;
 	flex-wrap: wrap;
 	width: -webkit-fill-available;
 	margin: 40px;
-	padding: 60px;
+	padding: 40px;
 	background-color: #ca282818;
-	align-items: center;
+	align-items: flex-end;
+`;
+
+const SelectBoxContainer = styled.div`
+	/* align-items: flex-end; */
+`;
+
+const Container = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 `;
 
 export {
@@ -63,4 +70,5 @@ export {
 	Logo,
 	StoreGalleryContainer,
 	SelectBoxContainer,
+	Container,
 };
