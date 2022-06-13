@@ -13,12 +13,18 @@ import {
 	StoreInfoImage,
 	StoreInfo,
 	SelectButton,
+	GalleryIcon,
+	ReviewIcon,
+	StoreInfopage,
+	StoreMenuButton,
+	MenuButton,
+	MenuButton2,
 } from './Store.style';
 import profile from '../../assets/profile.jpg';
 import StoreGallery from './StoreGallery';
 import StoreReview from './StoreReview';
 import StoreInfoData from './StoreInfoData';
-import { GrGallery } from 'react-icons/gr';
+import { BiPhotoAlbum } from 'react-icons/bi';
 import { AiFillEdit } from 'react-icons/ai';
 
 const infoData = [
@@ -45,31 +51,33 @@ const Store = () => {
 			</Header>
 			<Content>
 				<StoreIntro>
-					<StoreInfoImage src={profile} />
-					<StoreInfo>
-						{infoData.map(gallery => (
-							<StoreInfoData
-								key={gallery.id}
-								name={gallery.name}
-								thumbnail={gallery.thumbnail}
-								content={gallery.content}
-								id={gallery.id}
-							/>
-						))}
-					</StoreInfo>
+					<StoreInfopage>
+						<StoreInfoImage src={profile} />
+						<StoreInfo>
+							{infoData.map(gallery => (
+								<StoreInfoData
+									key={gallery.id}
+									name={gallery.name}
+									thumbnail={gallery.thumbnail}
+									content={gallery.content}
+									id={gallery.id}
+								/>
+							))}
+						</StoreInfo>
+					</StoreInfopage>
+					<StoreMenuButton>
+						<MenuButton />
+						<MenuButton2 />
+					</StoreMenuButton>
 				</StoreIntro>
 				<SelectButton>
-					<GrGallery
-						className="galleryicon"
-						size="50"
-						// color="white"
-						onClick={() => setViewGallery(true)}
-					></GrGallery>
-					<AiFillEdit
-						className="reviewicon"
-						size="50"
-						onClick={() => setViewGallery(false)}
-					></AiFillEdit>
+					<GalleryIcon onClick={() => setViewGallery(true)}>
+						<BiPhotoAlbum size="50" color="#e79ccaf9" />
+					</GalleryIcon>
+					|
+					<ReviewIcon onClick={() => setViewGallery(false)}>
+						<AiFillEdit color="#e79ccaf9" size="50" />
+					</ReviewIcon>
 				</SelectButton>
 				<StoreGalleryReview>
 					{' '}

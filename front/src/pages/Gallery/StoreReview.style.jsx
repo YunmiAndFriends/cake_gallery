@@ -6,8 +6,8 @@ const Container = styled.div`
 	flex-wrap: wrap;
 	height: fit-content;
 	/* width: -webkit-fill-available; */
-	margin: 40px;
-	padding: 60px;
+	/* margin: 40px; */
+	/* padding: 60px; */
 	background-color: #ca282818;
 	align-items: center;
 `;

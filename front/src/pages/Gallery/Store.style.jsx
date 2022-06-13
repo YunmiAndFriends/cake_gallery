@@ -50,6 +50,14 @@ const StoreIntro = styled.div`
 // 	height: 50vh;
 // `;
 
+const StoreInfopage = styled.div`
+	width: -webkit-fill-available;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-left: 80px;
+`;
+
 const StoreInfoImage = styled.div`
 	background-image: url(${profile});
 	width: 280px;
@@ -60,26 +68,27 @@ const StoreInfoImage = styled.div`
 
 const StoreInfo = styled.div`
 	display: flex;
-	/* width: 50vw; */
-	/* height: 40vh; */
+	margin-left: 40px;
 `;
+
+const StoreMenuButton = styled.div``;
+
+const MenuButton = styled.button``;
+
+const MenuButton2 = styled.button``;
 
 const SelectButton = styled.div`
 	display: flex;
-	justify-content: space-around;
-	margin: 20px;
-	/* height: 40px; */
-	.galleryicon {
-		/* color=#fad3ebfa; */
-		color: white;
-	}
-	.reviewicon {
-	}
+	justify-content: space-evenly;
+	/* margin: 20px; */
+	border: 3px solid #434d43ac;
+	border-radius: 4px;
 `;
+const GalleryIcon = styled.div``;
+
+const ReviewIcon = styled.div``;
 
 const GrGallery = styled.button``;
-
-const ReviewButton = styled.button``;
 
 const StoreGalleryReview = styled.div`
 	display: flex;
@@ -99,6 +108,11 @@ export {
 	StoreInfoImage,
 	StoreInfo,
 	GrGallery,
-	ReviewButton,
 	SelectButton,
+	GalleryIcon,
+	ReviewIcon,
+	StoreInfopage,
+	StoreMenuButton,
+	MenuButton,
+	MenuButton2,
 };
