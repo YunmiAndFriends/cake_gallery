@@ -8,6 +8,7 @@ import Mypage from './pages/Main/mypage';
 import _Mypage from './pages/Main/_mypage';
 import Customer from './pages/Login/customer_sign_up';
 import SignUp from './pages/Login/sign_up';
+import AllReview from './pages/Review/AllReview';
 
 function App() {
 	return (
@@ -23,6 +24,7 @@ function App() {
 
 				<Route path="/AllGallery" element={<Gallery />} />
 				<Route path="/Store" element={<Store />} />
+				<Route path="/AllReview" element={<AllReview />} />
 			</Routes>
 		</BrowserRouter>
 	);
