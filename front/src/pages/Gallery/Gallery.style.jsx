@@ -11,10 +11,12 @@ const Header = styled.div`
 	display: flex;
 	height: 30%;
 	justify-content: space-between;
+	border-bottom: 3px solid gray;
 `;
 
-const Logo = styled.div`
-	display: flex;
+const Logo = styled.button`
+	width: 100px;
+	height: 40px;
 `;
 
 const Menu = styled.div`
@@ -30,18 +32,33 @@ const Login = styled.button`
 	width: 80px;
 `;
 
-const SelectBoxContainer = styled.div`
-	margin-bottom: 20px;
-`;
-
 const Store = styled.div`
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
+	/* align-items: flex-end; */
+`;
+
+const StoreGalleryContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: -webkit-fill-available;
+	margin: 40px;
+	padding: 40px;
+	background-color: #ca282818;
 	align-items: flex-end;
 `;
 
-const StoreGalleryContainer = styled.div``;
+const SelectBoxContainer = styled.div`
+	/* align-items: flex-end; */
+`;
+
+const Container = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+`;
 
 export {
 	Content,
@@ -53,4 +70,5 @@ export {
 	Logo,
 	StoreGalleryContainer,
 	SelectBoxContainer,
+	Container,
 };
