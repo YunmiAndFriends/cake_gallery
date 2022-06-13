@@ -12,14 +12,14 @@ import {
 	StoreGalleryReview,
 	StoreInfoImage,
 	StoreInfo,
-	GalleryButton,
-	ReviewButton,
 	SelectButton,
 } from './Store.style';
 import profile from '../../assets/profile.jpg';
 import StoreGallery from './StoreGallery';
 import StoreReview from './StoreReview';
 import StoreInfoData from './StoreInfoData';
+import { GrGallery } from 'react-icons/gr';
+import { AiFillEdit } from 'react-icons/ai';
 
 const infoData = [
 	{
@@ -59,8 +59,17 @@ const Store = () => {
 					</StoreInfo>
 				</StoreIntro>
 				<SelectButton>
-					<GalleryButton onClick={() => setViewGallery(true)}>갤러리</GalleryButton>
-					<ReviewButton onClick={() => setViewGallery(false)}>후기</ReviewButton>
+					<GrGallery
+						className="galleryicon"
+						size="50"
+						// color="white"
+						onClick={() => setViewGallery(true)}
+					></GrGallery>
+					<AiFillEdit
+						className="reviewicon"
+						size="50"
+						onClick={() => setViewGallery(false)}
+					></AiFillEdit>
 				</SelectButton>
 				<StoreGalleryReview>
 					{' '}

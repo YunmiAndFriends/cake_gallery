@@ -15,7 +15,7 @@ const StoreReviewWrap = styled.div`
 
 const ThumbnailImg = styled.img`
 	width: -webkit-fill-available;
-	height: 250px;
+	height: 200px;
 	border-radius: 4px 4px 0 0;
 `;
 

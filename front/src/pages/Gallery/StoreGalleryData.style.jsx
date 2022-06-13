@@ -7,15 +7,14 @@ const StoreGalleryWrap = styled.div`
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
-	margin: 16px 40px;
-	/* height: 58%; */
+	margin: 16px 30px;
 	justify-content: space-around;
 	align-items: flex-start;
 `;
 
 const ThumbnailImg = styled.img`
 	width: -webkit-fill-available;
-	height: 250px;
+	height: 200px;
 	border-radius: 4px 4px 0 0;
 `;
 
