@@ -7,6 +7,7 @@ import {
 	IconDivWrap,
 	ContainerWrap,
 	Text,
+	MessageInput,
 	InputDivWrap,
 	Input,
 	SubmitButton,
@@ -15,8 +16,6 @@ import {
 import SignUpInfo from './sign_up_info';
 import { IoMdPersonAdd } from 'react-icons/io';
 import { useState } from 'react';
-import { useMemo } from 'react';
-
 function signup_page() {
 	const [userInfo, setUserInfo] = useState({
 		userName: '',
@@ -39,16 +38,18 @@ function signup_page() {
 			}
 		}
 		if (e.target.name === 'email') {
-			let onClickAtCheck = e.target.value;
-			if (onClickAtCheck.indexOf('@') === -1) {
-				console.log('@이가 빠짐');
-			}
-			let onClickDotCheck = e.target.value;
-			if (onClickDotCheck.indexOf('.') === -1) {
-				console.log('점이 빠짐');
-			}
-			if (onClickAtCheck.indexOf('.') > onClickDotCheck.indexOf('@')) {
+			let onClickAtDotCheck = e.target.value;
+			if (onClickAtDotCheck.indexOf('@') === -1) {
+				document.getElementById('emailCheckMessage').innerText = '@가 포함되지 않았습니다.';
+				console.log('at error!');
+			} else if (onClickAtDotCheck.indexOf('.') === -1) {
+				document.getElementById('emailCheckMessage').innerText = '.이 포함되지 않았습니다.';
+				console.log('dot error!');
+			} else if (onClickAtDotCheck.indexOf('.') < onClickAtDotCheck.indexOf('@')) {
+				document.getElementById('emailCheckMessage').innerText = '.이 @이 앞에 있습니다.';
 				console.log('error!');
+			} else {
+				document.getElementById('emailCheckMessage').innerText = '올바른 이메일 형식입니다.';
 			}
 		}
 
@@ -61,7 +62,9 @@ function signup_page() {
 
 	const checkPassWord = e => {
 		if (userInfo.pw !== e.target.value) {
-			console.log('비밀번호 다름!');
+			document.getElementById('pwCheckMessage').innerText = '비밀번호가 다릅니다.';
+		} else {
+			document.getElementById('pwCheckMessage').innerText = '비밀번호가 같습니다.';
 		}
 	};
 
@@ -93,6 +96,7 @@ function signup_page() {
 						data={userInfo.email}
 						onChangefunc={onChangeUserInfo}
 					/>
+					<MessageInput id="emailCheckMessage"> </MessageInput>
 					<InputDivWrap>
 						<Text>생일</Text>
 						<Input type="date" name="birthday" onChange={onChangeUserInfo} max="2015-06-01" />
@@ -103,8 +107,10 @@ function signup_page() {
 						name="pw"
 						data={userInfo.pw}
 						onChangefunc={onChangeUserInfo}
+						SignUpInfo
 					/>
-					<SignUpInfo text="비밀번호 확인" onChange={checkPassWord} />
+					<SignUpInfo text="비밀번호 확인" onChangefunc={checkPassWord} />
+					<MessageInput id="pwCheckMessage"> </MessageInput>
 				</ContainerWrap>
 				<SubmitButton>회원가입</SubmitButton>
 			</ContentWrap>
