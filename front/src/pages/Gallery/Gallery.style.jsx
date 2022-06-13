@@ -46,10 +46,9 @@ const StoreGalleryContainer = styled.div`
 	display: flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;
-
 	width: -webkit-fill-available;
 	margin: 40px;
-	padding: 45px;
+	padding: 60px;
 	background-color: #ca282818;
 	align-items: center;
 `;

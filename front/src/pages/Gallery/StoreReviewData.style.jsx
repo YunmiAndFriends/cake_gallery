@@ -8,7 +8,6 @@ const StoreReviewWrap = styled.div`
 	flex-wrap: wrap;
 	flex-direction: column;
 	margin: 16px 40px;
-	/* height: 58%; */
 	justify-content: space-around;
 	align-items: flex-start;
 `;
