@@ -52,6 +52,12 @@ const Text = styled.div`
 	text-align: center;
 `;
 
+const MessageInput = styled.div`
+	display: flex;
+	width: 320px;
+	padding: 12px;
+`;
+
 const InputDivWrap = styled.div`
 	display: flex;
 	padding: 8px;
@@ -91,6 +97,7 @@ export {
 	IconDivWrap,
 	ContainerWrap,
 	Text,
+	MessageInput,
 	InputDivWrap,
 	Input,
 	SubmitButton,

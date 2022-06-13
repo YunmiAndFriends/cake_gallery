@@ -7,6 +7,7 @@ import {
 	IconDivWrap,
 	ContainerWrap,
 	Text,
+	MessageInput,
 	InputDivWrap,
 	Input,
 	SubmitButton,
@@ -38,16 +39,18 @@ function sign_up() {
 			}
 		}
 		if (e.target.name === 'email') {
-			let onClickAtCheck = e.target.value;
-			if (onClickAtCheck.indexOf('@') === -1) {
-				console.log('@이가 빠짐');
-			}
-			let onClickDotCheck = e.target.value;
-			if (onClickDotCheck.indexOf('.') === -1) {
-				console.log('점이 빠짐');
-			}
-			if (onClickAtCheck.indexOf('.') > onClickDotCheck.indexOf('@')) {
+			let onClickAtDotCheck = e.target.value;
+			if (onClickAtDotCheck.indexOf('@') === -1) {
+				document.getElementById('emailCheckMessage').innerText = '@가 포함되지 않았습니다.';
+				console.log('at error!');
+			} else if (onClickAtDotCheck.indexOf('.') === -1) {
+				document.getElementById('emailCheckMessage').innerText = '.이 포함되지 않았습니다.';
+				console.log('dot error!');
+			} else if (onClickAtDotCheck.indexOf('.') < onClickAtDotCheck.indexOf('@')) {
+				document.getElementById('emailCheckMessage').innerText = '.이 @이 앞에 있습니다.';
 				console.log('error!');
+			} else {
+				document.getElementById('emailCheckMessage').innerText = '올바른 이메일 형식입니다.';
 			}
 		}
 
@@ -56,6 +59,14 @@ function sign_up() {
 			[e.target.name]: e.target.value,
 		});
 		console.log('변경된 값 확인', e.target.name, userInfo[e.target.name]);
+	};
+
+	const checkPassWord = e => {
+		if (userInfo.pw !== e.target.value) {
+			document.getElementById('pwCheckMessage').innerText = '비밀번호가 다릅니다.';
+		} else {
+			document.getElementById('pwCheckMessage').innerText = '비밀번호가 같습니다.';
+		}
 	};
 
 	return (
@@ -86,6 +97,7 @@ function sign_up() {
 						data={userInfo.email}
 						onChangefunc={onChangeUserInfo}
 					/>
+					<MessageInput id="emailCheckMessage"> </MessageInput>
 					<InputDivWrap>
 						<Text>생일</Text>
 						<Input type="date" name="birthday" onChange={onChangeUserInfo} max="2015-06-01" />
@@ -97,7 +109,8 @@ function sign_up() {
 						data={userInfo.pw}
 						onChangefunc={onChangeUserInfo}
 					/>
-					<SignUpInfo text="비밀번호 확인" />
+					<SignUpInfo text="비밀번호 확인" onChangefunc={checkPassWord} />
+					<MessageInput id="pwCheckMessage"> </MessageInput>
 				</ContainerWrap>
 				<SubmitButton>회원가입</SubmitButton>
 			</ContentWrap>
