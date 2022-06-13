@@ -32,8 +32,7 @@ module.exports = class User extends Sequelize.Model {
           defaultValue: null,
         },
         birthday: {
-          type: Sequelize.STRING(5),
-          defaultValue: "M",
+          type: Sequelize.STRING(30),
           allowNull: false,
         },
         createdAt: {
