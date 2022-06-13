@@ -64,7 +64,6 @@ const StoreInfoImage = styled.div`
 const StoreInfo = styled.div`
 	display: flex;
 	margin-left: 100px;
-	font-size: 36px;
 	color: #c15f5bda;
 `;
 
@@ -87,10 +86,24 @@ const SelectButton = styled.div`
 	/* margin: 20px; */
 	border: 3px solid #434d43ac;
 	border-radius: 4px;
+	cursor: pointer;
+	color: #434d43ac;
+	font-weight: bold;
+	align-items: center;
 `;
-const GalleryIcon = styled.div``;
+const GalleryIcon = styled.div`
+	width: -webkit-fill-available;
+	display: flex;
+	justify-content: center;
+	padding-left: 32px;
+`;
 
-const ReviewIcon = styled.div``;
+const ReviewIcon = styled.div`
+	width: -webkit-fill-available;
+	display: flex;
+	justify-content: center;
+	padding-right: 32px;
+`;
 
 const GrGallery = styled.button``;
 

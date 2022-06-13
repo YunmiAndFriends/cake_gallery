@@ -30,8 +30,8 @@ import { AiFillEdit } from 'react-icons/ai';
 const infoData = [
 	{
 		id: 0,
-		name: '가게명: 졸프의 노예 케이크',
-		content: '주소: 경기도 군포시 한세로 30',
+		name: '졸프의 노예 케이크',
+		content: '경기도 군포시 한세로 30',
 	},
 ];
 
@@ -72,11 +72,11 @@ const Store = () => {
 				</StoreIntro>
 				<SelectButton>
 					<GalleryIcon onClick={() => setViewGallery(true)}>
-						<BiPhotoAlbum size="50" color="#e79ccaf9" />
+						<BiPhotoAlbum size="50" color="#c15f5bda" />
 					</GalleryIcon>
 					|
 					<ReviewIcon onClick={() => setViewGallery(false)}>
-						<AiFillEdit color="#e79ccaf9" size="50" />
+						<AiFillEdit color="#c15f5bda" size="50" />
 					</ReviewIcon>
 				</SelectButton>
 				<StoreGalleryReview>
