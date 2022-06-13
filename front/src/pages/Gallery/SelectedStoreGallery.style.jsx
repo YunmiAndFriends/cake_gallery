@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const StoreGalleryWrap = styled.div`
+const SelectedStoreGalleryWrap = styled.div`
 	border: 1px solid gray;
 	border-radius: 4px;
 	background-color: #e7eae6c6;
@@ -25,4 +25,4 @@ const Storearea = styled.div`
 	color: gray;
 `;
 
-export { StoreGalleryWrap, ThumbnailImg, Storename, Storearea };
+export { SelectedStoreGalleryWrap, ThumbnailImg, Storename, Storearea };
