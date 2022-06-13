@@ -66,8 +66,8 @@ const Store = () => {
 						</StoreInfo>
 					</StoreInfopage>
 					<StoreMenuButton>
-						<MenuButton />
-						<MenuButton2 />
+						<MenuButton>❤</MenuButton>
+						<MenuButton2>Message</MenuButton2>
 					</StoreMenuButton>
 				</StoreIntro>
 				<SelectButton>

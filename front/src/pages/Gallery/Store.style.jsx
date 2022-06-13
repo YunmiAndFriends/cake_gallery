@@ -10,6 +10,7 @@ const Header = styled.div`
 	display: flex;
 	height: 10%;
 	justify-content: space-between;
+	border-bottom: 3px solid gray;
 `;
 
 const Logo = styled.button`
@@ -44,17 +45,11 @@ const StoreIntro = styled.div`
 	margin-bottom: 20px;
 `;
 
-// const StoreInfoImage = styled.image`
-// 	display: flex;
-// 	width: 50vw;
-// 	height: 50vh;
-// `;
-
 const StoreInfopage = styled.div`
 	width: -webkit-fill-available;
 	display: flex;
 	justify-content: flex-start;
-	align-items: center;
+	align-items: flex-start;
 	margin-left: 80px;
 `;
 
@@ -68,14 +63,23 @@ const StoreInfoImage = styled.div`
 
 const StoreInfo = styled.div`
 	display: flex;
-	margin-left: 40px;
+	margin-left: 100px;
+	font-size: 36px;
+	color: #c15f5bda;
 `;
 
 const StoreMenuButton = styled.div``;
 
-const MenuButton = styled.button``;
+const MenuButton = styled.button`
+	width: 100px;
+	height: 40px;
+	margin-bottom: 50px;
+`;
 
-const MenuButton2 = styled.button``;
+const MenuButton2 = styled.button`
+	width: 100px;
+	height: 40px;
+`;
 
 const SelectButton = styled.div`
 	display: flex;
