@@ -11,10 +11,10 @@ module.exports = () => {
         usernameField: "userKey",
         passwordField: "password",
       },
-      async (userkey, password, done) => {
+      async (userKey, password, done) => {
         console.log("----------LocalStrategy ", passport.count++);
         try {
-          const exUser = await User.findOne({ where: { userkey } });
+          const exUser = await User.findOne({ where: { userKey } });
           if (exUser) {
             const result = await bcrypt.compare(password, exUser.password);
             if (result) {

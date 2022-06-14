@@ -12,6 +12,7 @@ const app = express();
 
 
 const authRouter = require("./Apps/routes/auth");
+const galleryRouter = require("./Apps/routes/gallery");
 const passportConfig = require("./Apps/passport/index");
 
 
@@ -46,6 +47,8 @@ app.use(passport.session()); // req.session 객체에 passport 정보 저장
 
 
 app.use("/auth", authRouter);
+app.use("/gallery", galleryRouter);
+
 
 
 
