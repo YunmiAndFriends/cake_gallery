@@ -4,7 +4,7 @@ module.exports = class User extends Sequelize.Model {
   static init(sequelize) {
     return super.init(
       {
-        userkey: {
+        userKey: {
           type: Sequelize.STRING(10),
           allowNull: false,
           unique: true,
@@ -54,6 +54,6 @@ module.exports = class User extends Sequelize.Model {
   }
 
   static associate(db) {
-    //db.User.hasMany(db.Comment, { foreignKey: 'commenter', sourceKey: 'id' });
+    db.user.hasOne(db.gallery, { foreignKey: 'userKey', sourceKey: 'userKey' });
   }
 };
