@@ -28,10 +28,23 @@ router.post("/registerGallery", isLoggedIn, async (req, res, next) => {
 });
 
 
-// router.get("/logout", isLoggedIn, (req, res) => {
-//   req.logout();
-//   req.session.destroy();
-//   res.send("ok");
-// });
+router.get("/getRecentlyGallery", async (req, res) => {
+  const newGalleryList = await Gallery.findAll({order: [["created_at", "DESC"]],limit:3})
+  return res.send(newGalleryList)
+});
+
+router.get("/getAllGallery", async (req, res)=> {
+    const allGalleryList = await Gallery.findAll({});
+    return res.send(allGalleryList);
+})
+
+router.get("/getSelectGallery", async (req, res)=> {
+    const { selectedId } =  req.query;
+    const selectGallery = await Gallery.findOne({where: {id: selectedId}});
+    if(selectGallery===null){
+        return res.send("잘못된 URL 입니다.")
+    }
+    return res.send(selectGallery);
+})
 
 module.exports = router;
