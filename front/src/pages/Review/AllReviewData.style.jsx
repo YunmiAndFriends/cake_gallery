@@ -10,7 +10,7 @@ const AllReviewWrap = styled.div`
 	margin: 16px 30px;
 	/* justify-content: space-around; */
 	align-items: flex-start;
-	width: 300px;
+	width: 220px;
 `;
 
 const ThumbnailImg = styled.img`
