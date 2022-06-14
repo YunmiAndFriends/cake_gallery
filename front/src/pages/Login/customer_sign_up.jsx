@@ -16,6 +16,8 @@ import {
 import SignUpInfo from './sign_up_info';
 import { IoMdPersonAdd } from 'react-icons/io';
 import { useState } from 'react';
+import sendApi from '../../apis/sendApi';
+
 function signup_page() {
 	const [userInfo, setUserInfo] = useState({
 		userName: '',
@@ -25,6 +27,19 @@ function signup_page() {
 		id: '',
 		pw: '',
 	});
+
+	const onClickSignUp = async () => {
+		const { data } = await sendApi.login({
+			userkey: id,
+			password: pw,
+			name: userName,
+			birthday: birthday,
+			user_type: userType,
+			email: email,
+			mobile: hp,
+		});
+		console.log(data);
+	};
 
 	const onChangeUserInfo = e => {
 		if (e.target.name === 'hp') {
