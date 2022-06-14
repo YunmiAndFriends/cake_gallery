@@ -5,11 +5,12 @@ const AllReviewWrap = styled.div`
 	border-radius: 4px;
 	background-color: #e7eae6c6;
 	display: flex;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 	flex-direction: column;
 	margin: 16px 30px;
-	justify-content: space-around;
+	/* justify-content: space-around; */
 	align-items: flex-start;
+	width: 300px;
 `;
 
 const ThumbnailImg = styled.img`

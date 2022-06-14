@@ -20,7 +20,7 @@ import {
 	MenuButton,
 	MenuButton2,
 } from './Store.style';
-import profile from '../../assets/profile.jpg';
+import profile from '../../assets/storeProfile.jpg';
 import StoreGallery from './StoreGallery';
 import StoreReview from './StoreReview';
 import StoreInfoData from './StoreInfoData';

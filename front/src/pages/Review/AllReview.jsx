@@ -1,6 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Header, Logo, Menu, Mypage, Login, ReviewContent } from './AllReview.style';
+import {
+	Container,
+	Header,
+	Logo,
+	Menu,
+	Mypage,
+	Login,
+	Content,
+	ReviewContent,
+	ReviewBanner,
+} from './AllReview.style';
 import AllReviewData from './AllReviewData';
 
 const reviewData = [
@@ -67,17 +77,20 @@ const AllReview = () => {
 					<Login>Login</Login>
 				</Menu>
 			</Header>
-			<ReviewContent>
-				{reviewData.map(gallery => (
-					<AllReviewData
-						key={gallery.id}
-						name={gallery.name}
-						thumbnail={gallery.thumbnail}
-						content={gallery.content}
-						id={gallery.id}
-					/>
-				))}
-			</ReviewContent>
+			<Content>
+				<ReviewBanner>Review</ReviewBanner>
+				<ReviewContent>
+					{reviewData.map(gallery => (
+						<AllReviewData
+							key={gallery.id}
+							name={gallery.name}
+							thumbnail={gallery.thumbnail}
+							content={gallery.content}
+							id={gallery.id}
+						/>
+					))}
+				</ReviewContent>
+			</Content>
 		</Container>
 	);
 };

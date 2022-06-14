@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import profile from '../../assets/profile.jpg';
+import profile from '../../assets/storeProfile.jpg';
 
 const Container = styled.div`
 	display: flex;
