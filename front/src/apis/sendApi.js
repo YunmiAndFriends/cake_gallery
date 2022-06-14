@@ -4,4 +4,7 @@ export default {
 	login: req => {
 		return api.post('/auth/login', req);
 	},
+	getAllGallery: () => {
+		return api.get('/gallery/getAllGallery');
+	},
 };
