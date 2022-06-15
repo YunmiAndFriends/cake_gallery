@@ -17,7 +17,7 @@ import {
 
 import profile from '../../assets/_mypage_profile.png';
 import cake_profile from '../../assets/cake_pf.png';
-import gallery_photo from '../../assets/profile.jpg';
+import gallery_photo from '../../assets/storeProfile.jpg';
 
 const mypage = () => {
 	return (

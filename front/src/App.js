@@ -9,6 +9,8 @@ import Mypage from './pages/Main/mypage';
 import _Mypage from './pages/Main/_mypage';
 import Customer from './pages/Login/customer_sign_up';
 import SignUp from './pages/Login/sign_up';
+import AllReview from './pages/Review/AllReview';
+import BoardMain from './pages/board/BoardMain';
 import Review from './pages/Review/review_write';
 import CreatingPost from './pages/creatingPost/CreatingPostMain';
 
@@ -29,6 +31,8 @@ function App() {
 
 				<Route path="/AllGallery" element={<Gallery />} />
 				<Route path="/Store" element={<Store />} />
+				<Route path="/AllReview" element={<AllReview />} />
+				<Route path="/ReviewDetailes" element={<BoardMain />} />
 			</Routes>
 		</BrowserRouter>
 	);
