@@ -13,6 +13,7 @@ const app = express();
 
 const authRouter = require("./Apps/routes/auth");
 const galleryRouter = require("./Apps/routes/gallery");
+const postRouter = require("./Apps/routes/post");
 const passportConfig = require("./Apps/passport/index");
 
 
@@ -23,7 +24,7 @@ app.set("view engine", "ejs");
 
 app.use(morgan());
 const corsOptions = {
-  origin: "*",
+  origin: "http://localhost:3000",
   credentials: true
 }
 app.use(
@@ -48,9 +49,7 @@ app.use(passport.session()); // req.session 객체에 passport 정보 저장
 
 app.use("/auth", authRouter);
 app.use("/gallery", galleryRouter);
-
-
-
+app.use("/post", postRouter);
 
 sequelize
   .sync({ force: false })

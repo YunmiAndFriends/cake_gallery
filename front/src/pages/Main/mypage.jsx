@@ -18,8 +18,12 @@ import {
 
 import profile from '../../assets/_mypage_profile.png';
 import cake_profile from '../../assets/cake_pf.png';
+<<<<<<< HEAD
 // import gallery_photo from '../../assets/profile.jpg';
 import bell from '../../assets/bell.png';
+=======
+import gallery_photo from '../../assets/storeProfile.jpg';
+>>>>>>> fc1dd9d71dd6bc8fdccdd2b4c9bcd96a4ee9fbf6
 
 const mypage = () => {
 	return (

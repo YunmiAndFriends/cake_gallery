@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import sendApi from '../../apis/sendApi';
-import { IoCameraOutline } from 'react-icons/io5';
 
 const Wrapper = styled.div`
 	display: flex;
@@ -39,25 +37,6 @@ const PhotoAddWrap = styled.div`
 const InputPhoto = styled.input`
 	width: 380px;
 	height: 24px;
-`;
-const NoneLabel = styled.label`
-	border-radius: 50px;
-	transition: transform 0.5s;
-	&:hover {
-		cursor: pointer;
-		transform: scale(1.4);
-		border: none;
-	}
-`;
-
-const Label = styled.label`
-	border-radius: 50px;
-	transition: transform 0.5s;
-	&:hover {
-		cursor: pointer;
-		transform: scale(1.4);
-		border: none;
-	}
 `;
 
 const ImgWrap = styled.div`

@@ -54,14 +54,14 @@ const Body = styled.div`
 	justify-content: center;
 	font-size: 130%;
 `;
-const G_Text = styled.div`
+const GText = styled.div`
 	display: flex;
 	flex-direction: column;
 	text-align: center;
 	padding-left: 40px;
 `;
 
-const R_Text = styled.div`
+const RText = styled.div`
 	margin-top: 48px;
 	margin-bottom: 32px;
 `;
@@ -72,5 +72,4 @@ const RR = styled.div`
 	align-items: center;
 `;
 
-export { Img, Gallery, Body, Frame, Frame2, Frame3 };
-export { G_Text, R_Text, RR };
+export { Img, Gallery, Body, Frame, Frame2, Frame3, GText, RText, RR };
