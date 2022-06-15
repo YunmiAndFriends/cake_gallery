@@ -63,7 +63,7 @@ function Main() {
 	};
 
 	const click4 = () => {
-		navigate('/review');
+		navigate('/AllReview');
 	};
 
 	const apidData = async () => {
