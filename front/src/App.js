@@ -18,17 +18,16 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="login" element={<LoginPage />} />
-				<Route path="openstore" element={<OpenStore />} />
-				<Route path="customer_signup" element={<Customer />} />
-				<Route path="sign_up" element={<SignUp />} />
 				<Route path="/" element={<Cover />} />
+				<Route path="/login" element={<LoginPage />} />
+				<Route path="/openstore" element={<OpenStore />} />
+				<Route path="/customer_signup" element={<Customer />} />
+				<Route path="/sign_up" element={<SignUp />} />
 				<Route path="/main" element={<Main />} />
 				<Route path="/mypage" element={<Mypage />} />
-				<Route path="/_mypage" element={<_Mypage />} />
+				<Route path="/_mypage" element={<Mypage />} />
 				<Route path="/review" element={<Review />} />
 				<Route path="/reviewPosting" element={<CreatingPost />} />
-
 				<Route path="/AllGallery" element={<Gallery />} />
 				<Route path="/Store" element={<Store />} />
 				<Route path="/AllReview" element={<AllReview />} />

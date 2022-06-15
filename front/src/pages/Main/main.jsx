@@ -1,48 +1,13 @@
+/* eslint-disable react/jsx-pascal-case */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { Content, Header, Menu, Button } from './cover_style';
-import { Gallery, Body, Frame, Frame2, Frame3, R_Text, RR } from './main_style';
-import { Img, G_Text } from './main_style';
+import { Gallery, Body, Frame, Frame2, Frame3, RText, RR, Img, GText } from './main_style';
 import banner from '../../assets/banner.png';
 import sendApi from '../../apis/sendApi';
 import RandomGalleryData from './RandomGalleryData';
 import ReviewData from './ReviewData';
-import { Link } from 'react-router-dom';
-
-const click = () => {
-	document.location.href('/mypage');
-};
-const click2 = () => {
-	document.location.href('/login');
-};
-const click3 = () => {
-	document.location.href('/AllGallery');
-};
-const click4 = () => {
-	document.location.href('/review');
-};
-const randomGalleryData = [
-	{
-		id: 0,
-		name: '조각이',
-		thumbnail:
-			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZSP0u7NCoK9DC0kwCvbPeFn0-0O7CfmtT6Q&usqp=CAU',
-		content: 'ㄹㄹㄹㄹㄹㄹㄹㄹㄹ',
-	},
-	{
-		id: 1,
-		name: '호리',
-		thumbnail:
-			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZSP0u7NCoK9DC0kwCvbPeFn0-0O7CfmtT6Q&usqp=CAU',
-		content: '소개글',
-	},
-	{
-		id: 2,
-		name: '호리',
-		thumbnail:
-			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZSP0u7NCoK9DC0kwCvbPeFn0-0O7CfmtT6Q&usqp=CAU',
-		content: '소개글',
-	},
-];
+import { useNavigate } from 'react-router-dom';
 
 const reviewData = [
 	{
@@ -83,10 +48,31 @@ const reviewData = [
 ];
 
 function Main() {
+	const navigate = useNavigate();
 	const [recGalleryData, setRecGalleryData] = useState([]);
-	useEffect(async () => {
+
+	const click = () => {
+		navigate('/mypage');
+	};
+	const click2 = () => {
+		navigate('/login');
+	};
+
+	const click3 = () => {
+		navigate('/AllGallery');
+	};
+
+	const click4 = () => {
+		navigate('/review');
+	};
+
+	const apidData = async () => {
 		const { data } = await sendApi.getRecentlyGallery();
 		setRecGalleryData(data);
+	};
+
+	useEffect(() => {
+		apidData();
 	}, []);
 
 	// let navigate = useNavigate();
@@ -99,14 +85,10 @@ function Main() {
 			<Header>
 				<Menu>
 					{/* <Mypage> */}
-					<Link to="/mypage">
-						<Button onClick={click}>Mypage</Button>
-					</Link>
+					<Button onClick={click}>Mypage</Button>
 					{/* </Mypage> */}
 					{/* <Login> */}
-					<Link to="/login">
-						<Button onClick={click2}>Login</Button>
-					</Link>
+					<Button onClick={click2}>Login</Button>
 					{/* </Login> */}
 				</Menu>
 			</Header>
@@ -114,14 +96,10 @@ function Main() {
 				<Img src={banner} />
 				<Frame>
 					<Gallery>
-						<G_Text>
-							더 많은 갤러리
-							<br />
-							♥︎구경가기♥︎
-						</G_Text>
-						<Link to="/AllGallery">
-							<Button onClick={click3}>이동</Button>
-						</Link>
+						<GText>더 많은 갤러리</GText>
+						<br />
+						<GText>♥︎구경가기♥︎</GText>
+						<Button onClick={click3}>이동</Button>
 					</Gallery>
 					<Frame2>
 						{recGalleryData.map(gallery => (
@@ -136,10 +114,8 @@ function Main() {
 					</Frame2>
 				</Frame>
 				<RR>
-					<R_Text>= = = = 인기 후기글 = = = =</R_Text>
-					<Link to="/review">
-						<Button onClick={click4}>더보기</Button>
-					</Link>
+					<RText>= = = = 인기 후기글 = = = =</RText>
+					<Button onClick={click4}>더보기</Button>
 				</RR>
 
 				<Frame3>
