@@ -56,9 +56,10 @@ const Text = styled.div`
 	width: fit-content;
 	text-align: center;
 	color: whitesmoke;
-	background-color: #75757599;
-	border-radius: 4px;
-	padding-bottom: 16px;
+	background-color: #30303078;
+	border-radius: 12px;
+	padding: 16px;
+	margin-bottom: 16px;
 `;
 
 const Login = styled.button`
@@ -69,11 +70,14 @@ const Login = styled.button`
 `;
 
 const Button = styled.button`
-	width: 100px;
-	height: 24px;
-	margin: auto;
-	display: block;
-	margin-top: 16px;
+	background-color: #ffffffa6;
+	width: 200px;
+	padding: 8px;
+	border-radius: 8px;
+	color: black;
+	border: 1px solid silver;
+	font-size: 16px;
+	font-weight: bold;
 `;
 
 export { Content, Header, Body, Mypage, Login, Menu, Button, Text, TextWrap };
