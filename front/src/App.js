@@ -3,12 +3,13 @@ import Gallery from './pages/Gallery/Gallery';
 import LoginPage from './pages/Login/login_page';
 import Cover from './pages/Main/cover';
 import Main from './pages/Main/main';
-import Store from './pages/Gallery/Store';
+import Store from './pages/Store/Store';
 import Mypage from './pages/Main/mypage';
 import _Mypage from './pages/Main/_mypage';
 import Customer from './pages/Login/customer_sign_up';
 import SignUp from './pages/Login/sign_up';
 import AllReview from './pages/Review/AllReview';
+import ReviewDetails from './pages/Review/ReviewDetails';
 
 function App() {
 	return (
@@ -25,6 +26,7 @@ function App() {
 				<Route path="/AllGallery" element={<Gallery />} />
 				<Route path="/Store" element={<Store />} />
 				<Route path="/AllReview" element={<AllReview />} />
+				<Route path="/ReviewDetailes" element={<ReviewDetails />} />
 			</Routes>
 		</BrowserRouter>
 	);
