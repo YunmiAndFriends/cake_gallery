@@ -20,7 +20,7 @@ import {
 	MenuButton,
 	MenuButton2,
 } from './Store.style';
-import profile from '../../assets/profile.jpg';
+import profile from '../../assets/storeProfile.jpg';
 import StoreGallery from './StoreGallery';
 import StoreReview from './StoreReview';
 import StoreInfoData from './StoreInfoData';
@@ -45,8 +45,12 @@ const Store = () => {
 					<Logo>main</Logo>
 				</Link>
 				<Menu>
-					<Mypage>Mypage</Mypage>
-					<Login>Login</Login>
+					<Link to="/mypage">
+						<Mypage>Mypage</Mypage>
+					</Link>
+					<Link to="login">
+						<Login>Login</Login>
+					</Link>
 				</Menu>
 			</Header>
 			<Content>

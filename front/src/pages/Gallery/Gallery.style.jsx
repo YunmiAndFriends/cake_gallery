@@ -34,20 +34,21 @@ const Login = styled.button`
 
 const Store = styled.div`
 	display: flex;
-	flex-direction: column;
+	/* flex-direction: column; */
 	height: 100vh;
 	/* align-items: flex-end; */
 `;
 
 const StoreGalleryContainer = styled.div`
 	display: flex;
-	flex-direction: column;
+	/* flex-direction: column; */
 	flex-wrap: wrap;
 	width: -webkit-fill-available;
+	height: fit-content;
 	margin: 40px;
 	padding: 40px;
 	background-color: #ca282818;
-	align-items: flex-end;
+	/* align-items: flex-end; */
 `;
 
 const SelectBoxContainer = styled.div`
