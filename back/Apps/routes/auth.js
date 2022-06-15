@@ -15,7 +15,7 @@ router.post("/join", isNotLoggedIn, async (req, res, next) => {
 
   try {
     const exUser = await User.findOne({
-      where: { userkey: userkey },
+      where: { userKey: userkey },
     });
     /* 유저 존재 유무 확인, 없을 시 회원가입 */
     console.log("exUser확인 : ", exUser);
@@ -25,7 +25,7 @@ router.post("/join", isNotLoggedIn, async (req, res, next) => {
     const hash = await bcrypt.hash(password, 12);
     try {
       await User.create({
-        userkey: userkey,
+        userKey: userkey,
         password: hash,
         name: name,
         birthday: birthday,

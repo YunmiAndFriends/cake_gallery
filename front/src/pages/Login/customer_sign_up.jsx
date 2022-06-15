@@ -17,6 +17,7 @@ import SignUpInfo from './sign_up_info';
 import { IoMdPersonAdd } from 'react-icons/io';
 import { useState } from 'react';
 import sendApi from '../../apis/sendApi';
+import { Navigate } from 'react-router-dom';
 
 function signup_page() {
 	const [userInfo, setUserInfo] = useState({
@@ -29,16 +30,20 @@ function signup_page() {
 	});
 
 	const onClickSignUp = async () => {
-		const { data } = await sendApi.login({
-			userkey: id,
-			password: pw,
-			name: userName,
-			birthday: birthday,
-			user_type: userType,
-			email: email,
-			mobile: hp,
+		const { data } = await sendApi.signUp({
+			userkey: userInfo.id,
+			password: userInfo.pw,
+			name: userInfo.userName,
+			birthday: userInfo.birthday,
+			userType: 'client',
+			email: userInfo.email,
+			mobile: userInfo.hp,
 		});
-		console.log(data);
+		if (data === 'ok') {
+			Navigate('/login');
+		} else {
+			alert(data);
+		}
 	};
 
 	const onChangeUserInfo = e => {
@@ -127,7 +132,7 @@ function signup_page() {
 					<SignUpInfo text="비밀번호 확인" onChangefunc={checkPassWord} />
 					<MessageInput id="pwCheckMessage"> </MessageInput>
 				</ContainerWrap>
-				<SubmitButton>회원가입</SubmitButton>
+				<SubmitButton onClick={onClickSignUp}>회원가입</SubmitButton>
 			</ContentWrap>
 		</Container>
 	);
