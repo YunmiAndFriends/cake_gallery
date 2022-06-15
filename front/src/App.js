@@ -8,6 +8,8 @@ import Mypage from './pages/Main/mypage';
 import _Mypage from './pages/Main/_mypage';
 import Customer from './pages/Login/customer_sign_up';
 import SignUp from './pages/Login/sign_up';
+import Review from './pages/Review/review_write';
+import CreatingPost from './pages/creatingPost/CreatingPostMain';
 
 function App() {
 	return (
@@ -20,6 +22,8 @@ function App() {
 				<Route path="/main" element={<Main />} />
 				<Route path="/mypage" element={<Mypage />} />
 				<Route path="/_mypage" element={<_Mypage />} />
+				<Route path="/review" element={<Review />} />
+				<Route path="/reviewPosting" element={<CreatingPost />} />
 
 				<Route path="/AllGallery" element={<Gallery />} />
 				<Route path="/Store" element={<Store />} />

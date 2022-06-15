@@ -4,6 +4,7 @@ import coverImage from '../../assets/back_cover.png';
 const Content = styled.div`
 	display: flex;
 	flex-direction: column;
+	/* align-items: center; */
 	height: 100vh;
 	background-color: #f6ede1;
 `;
@@ -26,7 +27,12 @@ const Body = styled.div`
 `;
 
 const Menu = styled.div`
+	display: flex;
+	flex-direction: row;
+	/* justify-content: right; */
 	margin-right: 8px;
+	position: absolute;
+	right: 0%;
 `;
 
 const Mypage = styled.button`
@@ -48,13 +54,19 @@ const Text2 = styled.div`
 	color: whitesmoke;
 `;
 
-const Login = styled.button``;
+const Login = styled.button`
+	width: 96px;
+	height: 24px;
+	margin: auto;
+	display: block;
+`;
 
 const Button = styled.button`
 	width: 100px;
 	height: 24px;
 	margin: auto;
 	display: block;
+	margin-top: 16px;
 `;
 
 export { Content, Header, Body, Mypage, Login, Menu, Button, Text, Text2 };

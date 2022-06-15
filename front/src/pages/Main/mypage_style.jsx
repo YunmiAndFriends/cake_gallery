@@ -16,6 +16,9 @@ const Frame2 = styled.div`
 	align-items: center;
 	justify-content: flex-start;
 `;
+const Frame3 = styled.div`
+	margin-left: 100px;
+`;
 const Profile = styled.div``;
 const P2 = styled.div`
 	margin-left: 20px;
@@ -40,6 +43,19 @@ const Img2 = styled.img`
 	height: 128px;
 `;
 
+const Images = styled.div`
+	display: flex;
+	flex-direction: row;
+	opacity: 70%;
+`;
+
+const Img3 = styled.img`
+	width: 72px;
+	height: 64px;
+	margin-top: 8px;
+	margin-right: 8px;
+`;
+
 const Body = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -61,5 +77,5 @@ const T5 = styled.div`
 	margin-left: 20px;
 `;
 
-export { Frame, Frame2, Profile, P2, P3, Info, Info_Button, Body };
-export { Text, Text2, Text3, Text4, T5, Img, Img2 };
+export { Frame, Frame2, Frame3, Profile, P2, P3, Info, Info_Button, Body, Images };
+export { Text, Text2, Text3, Text4, T5, Img, Img2, Img3 };

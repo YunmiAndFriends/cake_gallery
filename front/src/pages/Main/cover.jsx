@@ -19,8 +19,11 @@ const cover = () => {
 				</Menu>
 			</Header> */}
 			<Body>
-				<Text>특별한 날 소중함을 더해주는 </Text>
-				<Text2>하나뿐인 케이크</Text2>
+				<Text>
+					특별한 날 소중함을 더해주는
+					<br />
+					하나뿐인 케이크
+				</Text>
 				<Link to="/main">
 					<Button onClick={click}>구경하러 가기</Button>
 				</Link>
