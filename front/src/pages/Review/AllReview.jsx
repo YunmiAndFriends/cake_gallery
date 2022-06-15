@@ -73,8 +73,12 @@ const AllReview = () => {
 					<Logo>main</Logo>
 				</Link>
 				<Menu>
-					<Mypage>Mypage</Mypage>
-					<Login>Login</Login>
+					<Link to="/mypage">
+						<Mypage>Mypage</Mypage>
+					</Link>
+					<Link to="login">
+						<Login>Login</Login>
+					</Link>
 				</Menu>
 			</Header>
 			<Content>
