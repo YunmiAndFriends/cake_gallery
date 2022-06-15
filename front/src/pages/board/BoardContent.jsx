@@ -18,6 +18,7 @@ const ContentImg = styled.img`
 	width: 496px;
 	height: 496px;
 	background-color: #fafafa;
+	border-radius: 4px;
 `;
 
 const Summary = styled.div`

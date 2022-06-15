@@ -38,6 +38,7 @@ const BoardTitle = styled.div`
 	margin: 16px 0 8px;
 	font-size: 32px;
 	font-weight: bold;
+	border-radius: 4px;
 `;
 const ButtonWrap = styled.div`
 	display: flex;
