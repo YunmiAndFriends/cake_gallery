@@ -13,4 +13,7 @@ export default {
 	getRecentlyGallery: () => {
 		return api.get('/gallery/getRecentlyGallery');
 	},
+	getRecentlyReviewPost: () => {
+		return api.get('/post/getRecentlyReviewPost');
+	},
 };
