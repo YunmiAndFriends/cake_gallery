@@ -5,17 +5,20 @@ import {
 	Storename,
 	Storearea,
 } from './SelectedStoreGallery.style';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const SelectedStoreGallery = ({ id, name, thumbnail, content }) => {
+	const navigate = useNavigate();
+
+	const onClickMovePage = () => {
+		navigate(`/store?selectedId=${id}`);
+	};
 	return (
-		<Link style={{ textDecoration: 'none', color: 'black' }} to="/Store">
-			<SelectedStoreGalleryWrap>
-				<ThumbnailImg src={thumbnail} />
-				<Storename>{name}</Storename>
-				<Storearea>{content}</Storearea>
-			</SelectedStoreGalleryWrap>
-		</Link>
+		<SelectedStoreGalleryWrap onClick={onClickMovePage}>
+			<ThumbnailImg src={thumbnail} />
+			<Storename>{name}</Storename>
+			<Storearea>{content}</Storearea>
+		</SelectedStoreGalleryWrap>
 	);
 };
 
