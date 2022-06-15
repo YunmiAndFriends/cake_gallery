@@ -36,7 +36,18 @@ function openStore() {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	let navigate = useNavigate();
 	function handleClick() {
-		navigate('/main');
+		if (
+			!(
+				galleryInfo.address.length &&
+				galleryInfo.imageurl.length &&
+				galleryInfo.introduction.length &&
+				galleryInfo.name.length
+			)
+		) {
+			alert('모든 필드를 채워주세요.');
+		} else {
+			navigate('/main');
+		}
 	}
 
 	return (
@@ -48,26 +59,29 @@ function openStore() {
 				<ContainerWrap>
 					<InputDivWrap>
 						<Text>가게 이름</Text>
-						<Input type="text" />
+						<Input type="text" name="name" onChange={onChangeGalleryInfo} />
 					</InputDivWrap>
 					<InputDivWrap>
 						<Text>주소</Text>
-						<Input />
+						<Input name="address" onChange={onChangeGalleryInfo} />
 					</InputDivWrap>
 					<InputDivWrap>
 						<Text>가게 소개</Text>
-						<Input />
+						<Input name="introduction" onChange={onChangeGalleryInfo} />
 					</InputDivWrap>
 					<MessageInput />
 					<InputDivWrap>
 						<Text>가게 대표 사진</Text>
 						<ImageDivWrap>
-							<Input type="text" />
+							<Input type="text" name="imageurl" onChange={onChangeGalleryInfo} />
 							<Image src={galleryInfo.imageurl} />
 						</ImageDivWrap>
 					</InputDivWrap>
+					<InputDivWrap />
 				</ContainerWrap>
-				<SubmitButton onClick={handleClick}>가게 등록하기</SubmitButton>
+				<SubmitButton type="submit" onClick={handleClick}>
+					가게 등록하기
+				</SubmitButton>
 			</ContentWrap>
 		</Container>
 	);
