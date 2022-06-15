@@ -16,11 +16,11 @@ import {
 	ContentWrap,
 } from './openStore_style';
 import { useState } from 'react';
+import sendApi from '../../apis/sendApi';
 
 function openStore() {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	let navigate = useNavigate();
-
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const [galleryInfo, setGalleryInfo] = useState({
 		name: '',
@@ -29,6 +29,7 @@ function openStore() {
 		introduction: '',
 		imageurl: '',
 	});
+
 	const onChangeGalleryInfo = e => {
 		setGalleryInfo({
 			...galleryInfo,
@@ -37,7 +38,7 @@ function openStore() {
 		console.log('변경된 값 확인', e.target.name, galleryInfo[e.target.name]);
 	};
 
-	function handleClick() {
+	async function handleClick() {
 		if (
 			!(
 				galleryInfo.address.length &&
@@ -49,7 +50,18 @@ function openStore() {
 		) {
 			alert('모든 필드를 채워주세요.');
 		} else {
-			navigate('/main');
+			const { data } = await sendApi.signUp({
+				name: galleryInfo.name,
+				address: galleryInfo.address,
+				introduction: galleryInfo.introduction,
+				imgUrl: galleryInfo.imageurl,
+				userKey: galleryInfo.id,
+			});
+			if (data === 'ok') {
+				navigate('/main');
+			} else {
+				alert(data);
+			}
 		}
 	}
 
