@@ -6,16 +6,25 @@ import {
 	Review,
 	Store,
 	Address,
+	ReviewContent,
+	StoreInfo,
+	ThumbnailBack,
 } from './ReviewDetailesData.style';
 
 const ReviewDetailesData = ({ id, title, thumbnail, content, storename, address }) => {
 	return (
 		<ReviewDetailesWrap>
-			<Title>{title}</Title>
-			<ThumbnailImg src={thumbnail} />
-			<Review>{content}</Review>
-			<Store>{storename}</Store>
-			<Address>{address}</Address>
+			<ThumbnailBack>
+				<ThumbnailImg src={thumbnail} />
+			</ThumbnailBack>
+			<ReviewContent>
+				<Title>{title}</Title>
+				<Review>{content}</Review>
+				<StoreInfo>
+					<Store>{storename}</Store>
+					<Address>{address}</Address>
+				</StoreInfo>
+			</ReviewContent>
 		</ReviewDetailesWrap>
 	);
 };

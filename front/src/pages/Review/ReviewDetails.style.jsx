@@ -48,27 +48,26 @@ const WriteTime = styled.div``;
 
 const ReviewContent = styled.div`
 	display: flex;
-	flex-direction: column;
 	width: -webkit-fill-available;
 	height: 100vh;
-	/* background-color: #7eccebcb; */
+	background-color: #cf91de57; // 리뷰 작성 부분 전체 색
 `;
 
-const TitleData = styled.div`
-	border-bottom: 1px solid gray;
-`;
+// const TitleData = styled.div`
+// 	border-bottom: 1px solid gray;
+// `;
 
-const ContentData = styled.div`
-	display: flex;
-`;
+// const ContentData = styled.div`
+// 	display: flex;
+// `;
 
-const ThumbnailData = styled.img`
-	display: flex;
-	width: fit-content;
-`;
+// const ThumbnailData = styled.img`
+// 	display: flex;
+// 	width: fit-content;
+// `;
 
 const ReviewContentData = styled.div`
-	display: flex;
+	/* display: flex; */
 `;
 
 export {
@@ -83,8 +82,8 @@ export {
 	ReviewContent,
 	Writer,
 	WriteTime,
-	TitleData,
-	ContentData,
-	ThumbnailData,
+	// TitleData,
+	// ContentData,
+	// ThumbnailData,
 	ReviewContentData,
 };
