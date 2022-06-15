@@ -7,4 +7,7 @@ export default {
 	getAllGallery: () => {
 		return api.get('/gallery/getAllGallery');
 	},
+	getRecentlyGallery: () => {
+		return api.get('/gallery/getRecentlyGallery');
+	},
 };

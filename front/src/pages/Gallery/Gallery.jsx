@@ -85,9 +85,11 @@ const www = [
 
 const Gallery = () => {
 	const [galleryData, setGalleryData] = useState([]);
-	useEffect(async () => {
-		const { data } = await sendApi.getAllGallery();
-		setGalleryData(data);
+	useEffect(() => {
+		(async () => {
+			const { data } = await sendApi.getAllGallery();
+			setGalleryData(data);
+		})();
 	}, []);
 	return (
 		<Content>
