@@ -7,6 +7,7 @@ module.exports = class Gallery extends Sequelize.Model {
         name: {
           type: Sequelize.STRING(30),
           allowNull: false,
+          unique: true,
         },
         address: {
           type: Sequelize.STRING(100),
@@ -43,5 +44,10 @@ module.exports = class Gallery extends Sequelize.Model {
       foreignKey: "userKey",
       targetKey: "userKey",
     });
+    db.gallery.hasMany(db.reviewPost, {
+      foreignKey: "storeName",
+      sourceKey: "name",
+    });
+    db.gallery.hasMany(db.galleryPost, { foreignKey: 'writer', sourceKey: 'name' });
   }
 };
