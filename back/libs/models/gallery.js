@@ -39,6 +39,9 @@ module.exports = class Gallery extends Sequelize.Model {
   }
 
   static associate(db) {
-    db.gallery.belongsTo(db.user, { foreignKey: 'userKey', targetKey: 'userKey' });
+    db.gallery.belongsTo(db.user, {
+      foreignKey: "userKey",
+      targetKey: "userKey",
+    });
   }
 };

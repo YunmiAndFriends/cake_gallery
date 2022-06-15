@@ -36,7 +36,11 @@ function login_page() {
 			userKey: loginId,
 			password: loginPw,
 		});
-		console.log(data);
+		if (data === 'ok') {
+			navigate('/main');
+		} else {
+			alert('잘못된 정보입니다.');
+		}
 	};
 
 	let navigate = useNavigate();

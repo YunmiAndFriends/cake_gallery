@@ -19,6 +19,9 @@ import { useState } from 'react';
 
 function openStore() {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
+	let navigate = useNavigate();
+
+	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const [galleryInfo, setGalleryInfo] = useState({
 		name: '',
 		address: '',
@@ -33,8 +36,6 @@ function openStore() {
 		console.log('변경된 값 확인', e.target.name, galleryInfo[e.target.name]);
 	};
 
-	// eslint-disable-next-line react-hooks/rules-of-hooks
-	let navigate = useNavigate();
 	function handleClick() {
 		if (
 			!(
