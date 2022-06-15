@@ -38,11 +38,11 @@ const SendButton = styled.button`
 	margin-top: 16px;
 	margin-left: 16px;
 	border: 0;
-	background-color: #f0b138;
+	background-color: #f6ede1;
 	width: 104px;
 	padding: 8px;
 	border-radius: 48px;
-	color: white;
+	color: black;
 	font-size: 16px;
 	font-weight: bold;
 	&:hover {
@@ -55,16 +55,9 @@ const CreatingPost = () => {
 	const [form, setForm] = useState({
 		title: '',
 		content: '',
-		startDate: '',
-		startTime: '',
-		endDate: '',
-		endTime: '',
-		hashTags: [],
+		storeName: '',
+		imgUrl: '',
 	});
-
-	const [pictureUrl, setPictureUrl] = useState([]);
-
-	useEffect(() => {}, [pictureUrl]);
 
 	const onChangeForm = e => {
 		setForm({
@@ -72,35 +65,21 @@ const CreatingPost = () => {
 			[e.target.name]: e.target.value,
 		});
 	};
-	const onChangeHashtags = e => {
-		const temp = e.target.value;
-		const sliceArr = temp.split(', ');
-		setForm({
-			...form,
-			hashTags: sliceArr,
-		});
-	};
-
-	const send = async () => {
-		const start = form.startDate.concat('T', form.startTime);
-		const end = form.endDate.concat('T', form.endTime);
-	};
 
 	const cancel = () => {
 		console.log('cancle');
 	};
 
+	const send = () => {
+		console.log('send', form);
+	};
+
 	return (
 		<Wrapper>
 			<MainWrapper>
-				<PostingForm
-					onChangeForm={onChangeForm}
-					setPictureUrl={setPictureUrl}
-					pictureUrl={pictureUrl}
-					onChangeHashtags={onChangeHashtags}
-				/>
+				<PostingForm onChangeForm={onChangeForm} formData={form} />
 				<ButtonWrap>
-					<SendButton onClick={() => send(form, pictureUrl)}>게시글 작성</SendButton>
+					<SendButton onClick={() => send()}>게시글 작성</SendButton>
 					<SendButton onClick={() => cancel()}>작성 취소</SendButton>
 				</ButtonWrap>
 			</MainWrapper>

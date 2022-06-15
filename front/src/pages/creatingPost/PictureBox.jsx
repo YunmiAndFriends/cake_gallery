@@ -15,7 +15,7 @@ const Wrapper = styled.div`
 const BoardPhoto = styled.img`
 	background-color: white;
 	height: 300px;
-	width: 300px;
+	width: 380px;
 	border: 1px solid white;
 	object-fit: cover;
 `;
@@ -32,12 +32,13 @@ const PhotoAddWrap = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 300px;
-	height: 80px;
+	width: 380px;
+	height: 40px;
 `;
 
 const InputPhoto = styled.input`
-	display: none;
+	width: 380px;
+	height: 24px;
 `;
 const NoneLabel = styled.label`
 	border-radius: 50px;
@@ -66,59 +67,17 @@ const ImgWrap = styled.div`
 `;
 
 const PictureBox = ({ pictureUrl, setPictureUrl }) => {
-	const [imgCount, setImgCount] = useState(0);
-
-	const onChange = async e => {
-		// try {
-		//   if (e.target.files[0]) {
-		//     const img = new FormData();
-		//     img.append('file', e.target.files[0]);
-		//     const { data: getImg } = await sendApi.postProfilePhoto(
-		//       img,
-		//       'BOARD_IMAGE'
-		//     );
-		//     const temp = pictureUrl.concat(getImg.data);
-		//     setPictureUrl(temp);
-		//     alert('사진 추가');
-		//   }
-		// } catch (error) {
-		//   alert(error.response.data.message);
-		// }
-	};
-
-	const onClickNextImg = () => {
-		if (imgCount + 1 < pictureUrl.length) {
-			setImgCount(imgCount + 1);
-		}
-	};
-
-	const onClickPrevImg = () => {
-		if (imgCount - 1 >= 0) {
-			setImgCount(imgCount - 1);
-		}
-	};
-
 	return (
 		<Wrapper>
 			{pictureUrl.length === 0 ? (
 				<BoardPhotoNone>사진 URL을 입력하세요.</BoardPhotoNone>
 			) : (
 				<ImgWrap>
-					<BoardPhoto src={pictureUrl[imgCount]} alt="게시글 사진" />
+					<BoardPhoto src={pictureUrl} alt="게시글 사진" />
 				</ImgWrap>
 			)}
 			<PhotoAddWrap>
-				{pictureUrl.length === 0 ? (
-					<NoneLabel for="boardPhoto">
-						<IoCameraOutline size="56" />
-					</NoneLabel>
-				) : (
-					<Label for="boardPhoto">
-						<IoCameraOutline size="56" />
-					</Label>
-				)}
-
-				<InputPhoto type="file" id="boardPhoto" accept="image/*" onChange={onChange} />
+				<InputPhoto name="imgUrl" onChange={setPictureUrl} />
 			</PhotoAddWrap>
 		</Wrapper>
 	);
