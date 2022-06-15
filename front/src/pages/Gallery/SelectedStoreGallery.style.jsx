@@ -8,6 +8,7 @@ const SelectedStoreGalleryWrap = styled.div`
 	flex-direction: column;
 	margin: 16px 40px;
 	align-items: flex-start;
+	cursor: pointer;
 `;
 
 const ThumbnailImg = styled.img`

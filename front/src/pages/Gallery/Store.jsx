@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
 	Container,
@@ -26,17 +26,27 @@ import StoreReview from './StoreReview';
 import StoreInfoData from './StoreInfoData';
 import { BiPhotoAlbum } from 'react-icons/bi';
 import { AiFillEdit } from 'react-icons/ai';
+import sendApi from '../../apis/sendApi';
 
-const infoData = [
-	{
-		id: 0,
-		name: '졸프의 노예 케이크',
-		content: '경기도 군포시 한세로 30',
-	},
-];
+const gallery = {
+	id: 0,
+	name: '졸프의 노예 케이크',
+	content: '경기도 군포시 한세로 30',
+};
 
 const Store = () => {
 	const [viewGallery, setViewGallery] = useState(true);
+	const [storeGalleryData, setStoreGalleryData] = useState(null);
+	async function api() {
+		const { data } = await sendApi.getStore();
+		setStoreGalleryData(data);
+		console.log('store', data);
+	}
+
+	useEffect(() => {
+		console.log(window.location.href);
+		//api();
+	}, []);
 
 	return (
 		<Container>
@@ -58,15 +68,13 @@ const Store = () => {
 					<StoreInfopage>
 						<StoreInfoImage src={profile} />
 						<StoreInfo>
-							{infoData.map(gallery => (
-								<StoreInfoData
-									key={gallery.id}
-									name={gallery.name}
-									thumbnail={gallery.thumbnail}
-									content={gallery.content}
-									id={gallery.id}
-								/>
-							))}
+							<StoreInfoData
+								key={gallery.id}
+								name={gallery.name}
+								thumbnail={gallery.thumbnail}
+								content={gallery.content}
+								id={gallery.id}
+							/>
 						</StoreInfo>
 					</StoreInfopage>
 					<StoreMenuButton>
