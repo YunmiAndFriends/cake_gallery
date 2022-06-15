@@ -4,6 +4,7 @@ import styled from 'styled-components';
 //import sendApi from 'apis/sendApi';
 import moment from 'moment';
 import BoardContent from './BoardContent';
+import { useNavigate } from 'react-router-dom';
 
 const DetailWrapper = styled.div`
 	background-color: white;
@@ -38,8 +39,33 @@ const BoardTitle = styled.div`
 	font-size: 32px;
 	font-weight: bold;
 `;
+const ButtonWrap = styled.div`
+	display: flex;
+	justify-content: flex-end;
+`;
+
+const SendButton = styled.button`
+	margin-top: 16px;
+	margin-left: 16px;
+	border: 0;
+	background-color: #f6ede1;
+	width: 104px;
+	padding: 8px;
+	border-radius: 48px;
+	color: black;
+	font-size: 16px;
+	font-weight: bold;
+	&:hover {
+		cursor: pointer;
+		border: 1px solid #cfcece;
+	}
+`;
 
 const BoardDetail = () => {
+	const navigate = useNavigate();
+	const back = () => {
+		navigate('/AllReview');
+	};
 	// const [boardDetailData, setBoardDetailData] = useState(null);
 	// const presentBoardId = boardId;
 	// useEffect(() => {
@@ -69,6 +95,9 @@ const BoardDetail = () => {
 			</Information>
 			<BoardTitle>{data.title}</BoardTitle>
 			<BoardContent boardImg={data.imgUrl} boardContent={data.content} storeName={data.storeName} />
+			<ButtonWrap>
+				<SendButton onClick={() => back()}>목록보기</SendButton>
+			</ButtonWrap>
 		</DetailWrapper>
 	);
 };
