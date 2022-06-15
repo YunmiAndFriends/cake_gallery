@@ -8,7 +8,7 @@ import {
 	Address,
 } from './ReviewDetailesData.style';
 
-const AllReviewData = ({ id, title, thumbnail, content, storename, address }) => {
+const ReviewDetailesData = ({ id, title, thumbnail, content, storename, address }) => {
 	return (
 		<ReviewDetailesWrap>
 			<Title>{title}</Title>
@@ -20,4 +20,4 @@ const AllReviewData = ({ id, title, thumbnail, content, storename, address }) =>
 	);
 };
 
-export default AllReviewData;
+export default ReviewDetailesData;
