@@ -89,15 +89,19 @@ const Gallery = () => {
 					<Logo>main</Logo>
 				</Link>
 				<Menu>
-					<Mypage>Mypage</Mypage>
-					<Login>Login</Login>
+					<Link to="/mypage">
+						<Mypage>Mypage</Mypage>
+					</Link>
+					<Link to="login">
+						<Login>Login</Login>
+					</Link>
 				</Menu>
 			</Header>
 			<Store>
 				<StoreGalleryContainer>
-					<SelectBoxContainer>
+					{/* <SelectBoxContainer>
 						<SelectBox option={OPTION} />
-					</SelectBoxContainer>
+					</SelectBoxContainer> */}
 					<Container>
 						{galleryData.map(gallery => (
 							<SelectedStoreGallery

@@ -44,6 +44,7 @@ const StoreGalleryContainer = styled.div`
 	/* flex-direction: column; */
 	flex-wrap: wrap;
 	width: -webkit-fill-available;
+	height: fit-content;
 	margin: 40px;
 	padding: 40px;
 	background-color: #ca282818;
