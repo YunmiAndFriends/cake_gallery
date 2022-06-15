@@ -44,14 +44,21 @@ const Mypage = styled.button`
 // 	justify-content: center;
 // `;
 
-const Text = styled.div`
-	text-align: center;
-	color: whitesmoke;
+const TextWrap = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 32px;
 `;
 
-const Text2 = styled.div`
+const Text = styled.div`
+	width: fit-content;
 	text-align: center;
 	color: whitesmoke;
+	background-color: #75757599;
+	border-radius: 4px;
+	padding-bottom: 16px;
 `;
 
 const Login = styled.button`
@@ -69,4 +76,4 @@ const Button = styled.button`
 	margin-top: 16px;
 `;
 
-export { Content, Header, Body, Mypage, Login, Menu, Button, Text, Text2 };
+export { Content, Header, Body, Mypage, Login, Menu, Button, Text, TextWrap };

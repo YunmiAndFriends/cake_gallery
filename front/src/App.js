@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Gallery from './pages/Gallery/Gallery';
 import LoginPage from './pages/Login/login_page';
+import OpenStore from './pages/Store/openStore';
 import Cover from './pages/Main/cover';
 import Main from './pages/Main/main';
 import Store from './pages/Gallery/Store';
@@ -16,6 +17,7 @@ function App() {
 		<BrowserRouter>
 			<Routes>
 				<Route path="login" element={<LoginPage />} />
+				<Route path="openstore" element={<OpenStore />} />
 				<Route path="customer_signup" element={<Customer />} />
 				<Route path="sign_up" element={<SignUp />} />
 				<Route path="/" element={<Cover />} />
