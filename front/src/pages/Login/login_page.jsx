@@ -18,6 +18,7 @@ import LoginLogo from '../../assets/cake-piece.png';
 import { BiUser } from 'react-icons/bi';
 import { MdPassword } from 'react-icons/md';
 import { useState } from 'react';
+import sendApi from '../../apis/sendApi';
 
 function login_page() {
 	const [loginId, setloginId] = useState('');
@@ -30,7 +31,17 @@ function login_page() {
 		setloginPw(e.target.value);
 	};
 
-	const onClickLogin = () => {};
+	const onClickLogin = async () => {
+		const { data } = await sendApi.login({
+			userKey: loginId,
+			password: loginPw,
+		});
+		if (data === 'ok') {
+			navigate('/main');
+		} else {
+			alert('잘못된 정보입니다.');
+		}
+	};
 
 	let navigate = useNavigate();
 	function handleClick() {

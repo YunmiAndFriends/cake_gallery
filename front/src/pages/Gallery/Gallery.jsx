@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
 	Content,
 	Header,
@@ -14,6 +14,8 @@ import {
 import SelectBox from './SelectBox';
 import SelectedStoreGallery from './SelectedStoreGallery';
 import { Link } from 'react-router-dom';
+import sendApi from '../../apis/sendApi';
+import { useState } from 'react';
 
 const OPTION = [
 	{ value: 'famous', name: '인기순' },
@@ -22,7 +24,7 @@ const OPTION = [
 	{ value: 'near', name: '거리 가까운순' },
 ];
 
-const galleryData = [
+const www = [
 	{
 		id: 0,
 		name: '딸기 케이크',
@@ -82,6 +84,13 @@ const galleryData = [
 ];
 
 const Gallery = () => {
+	const [galleryData, setGalleryData] = useState([]);
+	useEffect(() => {
+		(async () => {
+			const { data } = await sendApi.getAllGallery();
+			setGalleryData(data);
+		})();
+	}, []);
 	return (
 		<Content>
 			<Header>
@@ -107,8 +116,8 @@ const Gallery = () => {
 							<SelectedStoreGallery
 								key={gallery.id}
 								name={gallery.name}
-								thumbnail={gallery.thumbnail}
-								content={gallery.content}
+								thumbnail={gallery.imgUrl}
+								content={gallery.address}
 								id={gallery.id}
 							/>
 						))}

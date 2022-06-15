@@ -15,9 +15,12 @@ import {
 import SignUpInfo from './sign_up_info';
 import { SiCodechef } from 'react-icons/si';
 import { useState } from 'react';
+import sendApi from '../../apis/sendApi';
+import { useNavigate } from 'react-router-dom';
 
-function sign_up() {
+function Sign_up() {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
+	const navigate = useNavigate();
 	const [userInfo, setUserInfo] = useState({
 		userName: '',
 		hp: '',
@@ -26,6 +29,23 @@ function sign_up() {
 		id: '',
 		pw: '',
 	});
+
+	const onClickSignUp = async () => {
+		const { data } = await sendApi.signUp({
+			userkey: userInfo.id,
+			password: userInfo.pw,
+			name: userInfo.userName,
+			birthday: userInfo.birthday,
+			userType: 'client',
+			email: userInfo.email,
+			mobile: userInfo.hp,
+		});
+		if (data === 'ok') {
+			navigate('/openstore');
+		} else {
+			alert(data);
+		}
+	};
 
 	const onChangeUserInfo = e => {
 		if (e.target.name === 'hp') {
@@ -112,10 +132,10 @@ function sign_up() {
 					<SignUpInfo text="비밀번호 확인" onChangefunc={checkPassWord} />
 					<MessageInput id="pwCheckMessage"> </MessageInput>
 				</ContainerWrap>
-				<SubmitButton>회원가입</SubmitButton>
+				<SubmitButton onClick={onClickSignUp}>회원가입</SubmitButton>
 			</ContentWrap>
 		</Container>
 	);
 }
 
-export default sign_up;
+export default Sign_up;

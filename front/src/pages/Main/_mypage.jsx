@@ -3,7 +3,7 @@ import { Content, Header, Menu, Mypage, Login, Button } from './cover_style';
 import { Info, Info_Button, Body, Profile, P2, P3 } from './mypage_style';
 import { Frame, Frame2, Text, Text2, Text3, Text4, T5, Img, Img2 } from './mypage_style';
 
-import profile from '../../assets/profile.png';
+import profile from '../../assets/_mypage_profile.png';
 import cake_profile from '../../assets/cake_pf.png';
 
 const mypage = () => {
