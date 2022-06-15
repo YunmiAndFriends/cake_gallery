@@ -23,7 +23,10 @@ const Profile = styled.div``;
 const P2 = styled.div`
 	margin-left: 20px;
 `;
-const P3 = styled.div``;
+const P3 = styled.div`
+	display: flex;
+	flex-direction: row;
+`;
 
 const Info = styled.div`
 	font-size: 32px;
@@ -55,6 +58,11 @@ const Img3 = styled.img`
 	margin-top: 8px;
 	margin-right: 8px;
 `;
+const Img4 = styled.img`
+	width: 24px;
+	height: 24px;
+	margin-left: 12px;
+`;
 
 const Body = styled.div`
 	display: flex;
@@ -78,4 +86,4 @@ const T5 = styled.div`
 `;
 
 export { Frame, Frame2, Frame3, Profile, P2, P3, Info, Info_Button, Body, Images };
-export { Text, Text2, Text3, Text4, T5, Img, Img2, Img3 };
+export { Text, Text2, Text3, Text4, T5, Img, Img2, Img3, Img4 };

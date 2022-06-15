@@ -13,11 +13,13 @@ import {
 	Img,
 	Img2,
 	Img3,
+	Img4,
 } from './mypage_style';
 
 import profile from '../../assets/_mypage_profile.png';
 import cake_profile from '../../assets/cake_pf.png';
-import gallery_photo from '../../assets/profile.jpg';
+// import gallery_photo from '../../assets/profile.jpg';
+import bell from '../../assets/bell.png';
 
 const mypage = () => {
 	return (
@@ -38,12 +40,12 @@ const mypage = () => {
 							{/* <Button>회원정보수정</Button> */}
 						</Info>
 
-						<Text>♥︎ 팔로우한 가게 ♥︎</Text>
+						{/* <Text>♥︎ 팔로우한 가게 ♥︎</Text>
 						<Images>
 							<Img3 src={gallery_photo} />
 							<Img3 src={gallery_photo} />
 							<Img3 src={gallery_photo} />
-						</Images>
+						</Images> */}
 					</Profile>
 				</Frame>
 				<Frame3>
@@ -56,6 +58,7 @@ const mypage = () => {
 						</P2>
 						<P3>
 							<T5>픽업 : 2022/05/03 17시</T5>
+							<Img4 src={bell} />
 						</P3>
 					</Frame2>
 					<Text2>후기관리</Text2>
