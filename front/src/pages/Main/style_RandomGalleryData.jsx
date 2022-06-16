@@ -4,6 +4,7 @@ const RandomGalleryWrap = styled.div`
 	display: flex;
 	margin-bottom: 16px;
 	padding-left: 32px;
+	cursor: pointer;
 `;
 const ThumbnailImg = styled.img`
 	width: 132px;

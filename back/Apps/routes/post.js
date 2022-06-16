@@ -19,9 +19,13 @@ router.get("/getRecentlyGalleryPost", async (req, res) => {
 
 // 전체 갤러리들의 업로드 포스트
 router.get("/getAllGalleryPost", async (req, res) => {
+  console.log("\n\nssdsd")
+
   const allGalleryPostList = await GalleryPost.findAll({
     order: [["created_at", "DESC"]],
   });
+  console.log("\n\nallGalleryPostList", allGalleryPostList)
+
   return res.send(allGalleryPostList);
 });
 
@@ -72,14 +76,6 @@ router.get("/getRecentlyReviewPost", async (req, res) => {
   return res.send(recentlyPostList);
 });
 
-// 전체 후기 포스트
-router.get("/getAllReviewPost", async (req, res) => {
-  const allReviewPostList = await ReviewPost.findAll({
-    order: [["created_at", "DESC"]],
-  });
-  return res.send(allReviewPostList);
-});
-
 // 후기 포스팅 추가
 router.get("/createReviewPosting",isLoggedIn, async (req, res) => {
   const { title, aontent, img, storeName, writer} = req.body;
@@ -114,16 +110,12 @@ router.get("/createReviewPosting",isLoggedIn, async (req, res) => {
   }
 });
 
-// 후기 포스팅 열람
-router.get("/readReviewPost", async (req, res) => {
-  const { selectedId } = req.query;
-  const selectReviewPost = await ReviewPost.findOne({
-    where: { id: selectedId },
-  });
-  if (selectReviewPost === null) {
-    return res.send("잘못된 URL 입니다.");
-  }
-  return res.send(selectReviewPost);
+
+
+// 전체 후기 포스트
+router.get("/getReviewList", (req, res) => {
+  res.send('ok')
+  
 });
 
 module.exports = router;

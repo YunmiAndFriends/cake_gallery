@@ -87,6 +87,7 @@ const MoveButton = styled.div`
 	margin: 0 8px;
 	border-radius: 50%;
 	background-color: white;
+	cursor: pointer;
 `;
 
 export { Img, Gallery, Body, Frame, Frame2, Frame3, GText, RText, RR, MoveButton };

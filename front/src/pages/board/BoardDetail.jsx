@@ -1,7 +1,6 @@
-import React from 'react';
-//import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-//import sendApi from 'apis/sendApi';
+import sendApi from '../../apis/sendApi';
 import moment from 'moment';
 import BoardContent from './BoardContent';
 import { useNavigate } from 'react-router-dom';
@@ -67,40 +66,40 @@ const BoardDetail = () => {
 	const back = () => {
 		navigate('/AllReview');
 	};
-	// const [boardDetailData, setBoardDetailData] = useState(null);
-	// const presentBoardId = boardId;
-	// useEffect(() => {
-	// 	const receivedData = async () => {
-	// 		try {
-	// 			const { data } = await sendApi.getBoardDetail(boardId);
-	// 			setBoardDetailData(data.data);
-	// 		} catch (e) {
-	// 		}
-	// 	};
-	// 	receivedData();
-	// }, []);
-	const data = {
-		id: 1,
-		writer: 'ㅅ믕5971',
-		createdAt: '2022-06-16',
-		title: '올해 최고의 케이크',
-		content: '올해 최고의 케이크라고 자부합니다. 존맛탱 언니가 아주 많이 좋아햇ㅆ어요.',
-		imgUrl: 'https://cdn.pixabay.com/photo/2018/09/11/11/47/cake-3669245_960_720.jpg',
-		storeName: '마음을 담은 케이크',
-	};
-	return (
-		<DetailWrapper>
-			<Information>
-				<Writer>{data.writer}</Writer>
-				<CreatedDate>게시글 작성 시간 {moment(data.createdAt).format('YYYY.MM.DD')}</CreatedDate>
-			</Information>
-			<BoardTitle>{data.title}</BoardTitle>
-			<BoardContent boardImg={data.imgUrl} boardContent={data.content} storeName={data.storeName} />
-			<ButtonWrap>
-				<SendButton onClick={() => back()}>목록보기</SendButton>
-			</ButtonWrap>
-		</DetailWrapper>
-	);
+
+	const [storeReviewData, setStoreReviewData] = useState(null);
+	async function api(id) {
+		const { data } = await sendApi.getReviewDetailes({ selectedId: id });
+		setStoreReviewData(data);
+		console.log('store', data);
+	}
+
+	useEffect(() => {
+		const idData = window.location.href.split('=');
+		api(idData[1]);
+	}, []);
+
+	if (storeReviewData !== null) {
+		return (
+			<DetailWrapper>
+				<Information>
+					<Writer>{storeReviewData.writer}</Writer>
+					<CreatedDate>
+						게시글 작성 시간 {moment(storeReviewData.createdAt).format('YYYY.MM.DD')}
+					</CreatedDate>
+				</Information>
+				<BoardTitle>{storeReviewData.title}</BoardTitle>
+				<BoardContent
+					boardImg={storeReviewData.imgUrl}
+					boardContent={storeReviewData.content}
+					storeName={storeReviewData.storeName}
+				/>
+				<ButtonWrap>
+					<SendButton onClick={() => back()}>목록보기</SendButton>
+				</ButtonWrap>
+			</DetailWrapper>
+		);
+	}
 };
 
 export default BoardDetail;

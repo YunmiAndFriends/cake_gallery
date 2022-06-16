@@ -6,6 +6,7 @@ const ReviewWrap = styled.div`
 	align-items: center;
 	padding-top: 16px;
 	margin: 32px;
+	cursor: pointer;
 `;
 const ThumbnailImg = styled.img`
 	width: 200px;

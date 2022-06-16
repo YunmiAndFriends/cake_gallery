@@ -11,6 +11,7 @@ const AllReviewWrap = styled.div`
 	/* justify-content: space-around; */
 	align-items: flex-start;
 	width: 220px;
+	cursor: pointer;
 `;
 
 const ThumbnailImg = styled.img`

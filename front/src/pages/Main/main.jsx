@@ -21,44 +21,6 @@ import RandomGalleryData from './RandomGalleryData';
 import ReviewData from './ReviewData';
 import { useNavigate } from 'react-router-dom';
 
-const reviewData = [
-	{
-		id: 0,
-		name: '조각이',
-		thumbnail:
-			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZSP0u7NCoK9DC0kwCvbPeFn0-0O7CfmtT6Q&usqp=CAU',
-		content: 'ㄹㄹㄹㄹㄹㄹㄹㄹㄹ',
-	},
-	{
-		id: 1,
-		name: '조각이',
-		thumbnail:
-			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZSP0u7NCoK9DC0kwCvbPeFn0-0O7CfmtT6Q&usqp=CAU',
-		content: 'ㄹㄹㄹㄹㄹㄹㄹㄹㄹ',
-	},
-	{
-		id: 2,
-		name: '조각이',
-		thumbnail:
-			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZSP0u7NCoK9DC0kwCvbPeFn0-0O7CfmtT6Q&usqp=CAU',
-		content: 'ㄹㄹㄹㄹㄹㄹㄹㄹㄹ',
-	},
-	{
-		id: 3,
-		name: '조각이',
-		thumbnail:
-			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZSP0u7NCoK9DC0kwCvbPeFn0-0O7CfmtT6Q&usqp=CAU',
-		content: 'ㄹㄹㄹㄹㄹㄹㄹㄹㄹ',
-	},
-	{
-		id: 4,
-		name: '조각이',
-		thumbnail:
-			'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZSP0u7NCoK9DC0kwCvbPeFn0-0O7CfmtT6Q&usqp=CAU',
-		content: 'ㄹㄹㄹㄹㄹㄹㄹㄹㄹ',
-	},
-];
-
 function Main() {
 	const navigate = useNavigate();
 	const [recGalleryData, setRecGalleryData] = useState([]);

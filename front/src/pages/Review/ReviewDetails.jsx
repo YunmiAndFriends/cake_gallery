@@ -19,6 +19,7 @@ import {
 import { Link } from 'react-router-dom';
 import ReviewDetailesData from './ReviewDetailesData';
 import sendApi from '../../apis/sendApi';
+import HeaderBar from '../components/HeaderBar';
 
 // const reviewDetailesData = [
 // 	{
@@ -35,7 +36,7 @@ import sendApi from '../../apis/sendApi';
 const ReviewDetails = () => {
 	const [reviewDetailesData, setReviewDetailesData] = useState(null);
 	async function api(id) {
-		const { data } = await sendApi.getReivew({ selectedId: id });
+		const { data } = await sendApi.getReviewDetailes({ selectedId: id });
 		setReviewDetailesData(data);
 		console.log('reviewdetailes', data);
 	}

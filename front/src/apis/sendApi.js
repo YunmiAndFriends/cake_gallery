@@ -27,9 +27,9 @@ export default {
 		return api.post('/gallery/registerGallery', req);
 	},
 	getAllReviewPost: () => {
-		return api.get('/gallery/getAllReviewPost');
+		return api.get('/auth/getReviewList');
 	},
 	getReviewDetailes: req => {
-		return api.get(`/post/readReviewPost?selectedId=${req.selectedId}`);
+		return api.get(`/auth/readReviewPost?selectedId=${req.selectedId}`);
 	},
 };

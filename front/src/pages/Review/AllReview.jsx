@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
 	Container,
 	Header,
@@ -14,13 +14,19 @@ import {
 import AllReviewData from './AllReviewData';
 import sendApi from '../../apis/sendApi';
 import HeaderBar from '../components/HeaderBar';
+import { MoveButton } from '../Main/main_style';
 
 const AllReview = () => {
+	const navigate = useNavigate();
 	const [reviewData, setReviewData] = useState([]);
 	async function api() {
 		const { data } = await sendApi.getAllReviewPost();
 		setReviewData(data);
 	}
+
+	const onClickMoveBtn = () => {
+		navigate('/reviewPosting');
+	};
 
 	useEffect(() => {
 		api();
@@ -29,13 +35,15 @@ const AllReview = () => {
 		<Container>
 			<HeaderBar />
 			<Content>
-				<ReviewBanner>Review</ReviewBanner>
+				<ReviewBanner>
+					Review<MoveButton onClick={onClickMoveBtn}>+</MoveButton>
+				</ReviewBanner>
 				<ReviewContent>
 					{reviewData.map(gallery => (
 						<AllReviewData
 							key={gallery.id}
 							title={gallery.title}
-							thumbnail={gallery.thumbnail}
+							thumbnail={gallery.imgUrl}
 							writer={gallery.writer}
 							id={gallery.id}
 						/>

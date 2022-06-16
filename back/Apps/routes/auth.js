@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const { isLoggedIn, isNotLoggedIn } = require("./middlewares");
 const User = require("../../libs/models/user");
 const Gallery = require("../../libs/models/gallery");
+const ReviewPost = require("../../libs/models/reviewPost")
 
 const router = express.Router();
 
@@ -78,6 +79,35 @@ router.get("/logout", isLoggedIn, (req, res) => {
   req.logout();
   req.session.destroy();
   res.send("ok");
+});
+
+// 전체 후기 포스트
+router.get("/getReviewList", async(req, res) => {
+  try {
+    console.log("\n\ngetAllReviewPost")
+  const allReviewPostList = await ReviewPost.findAll({
+    order: [["created_at", "DESC"]],
+  });
+  console.log("\n\nget:", allReviewPostList)
+  return res.send(allReviewPostList);
+  } catch (error) {
+    console.log("왜 안돼? ", error)
+  }
+});
+
+// 후기 포스팅 열람
+router.get("/readReviewPost", async (req, res) => {
+  const { selectedId } = req.query;
+  console.log("\n\n\n\nselectedId", selectedId)
+  const selectReviewPost = await ReviewPost.findOne({
+    where: { id: selectedId },
+  });
+  console.log("selectReviewPost", selectReviewPost)
+
+  if (selectReviewPost === null) {
+    return res.send("\n\n\n\n잘못된 URL 입니다.");
+  }
+  return res.send(selectReviewPost);
 });
 
 module.exports = router;
