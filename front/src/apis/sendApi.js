@@ -18,7 +18,7 @@ export default {
 		return api.get('/post/getRecentlyReviewPost');
 	},
 	getStore: req => {
-		return api.get(`/post/createReviewPosting`);
+		return api.get(`/gallery/getSelectGallery?selectedId=${req.selectedId}`);
 	},
 	getPosting: req => {
 		return api.post(`/post/createReviewPosting`, req);
