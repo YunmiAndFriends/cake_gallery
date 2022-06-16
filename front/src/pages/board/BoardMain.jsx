@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import BoardDetail from './BoardDetail';
 import HeaderBar from '../components/HeaderBar';
+// import sendApi from '../../apis/sendApi';
 
 const Wrapper = styled.div`
 	display: flex;
