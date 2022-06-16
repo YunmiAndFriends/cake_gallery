@@ -18,7 +18,13 @@ export default {
 		return api.get('/post/getRecentlyReviewPost');
 	},
 	getStore: req => {
-		return api.get(`/gallery/getSelectGallery?selectedId=${req.selectedId}`);
+		return api.get(`/post/createReviewPosting`);
+	},
+	getPosting: req => {
+		return api.post(`/post/createReviewPosting`, req);
+	},
+	registerGallery: req => {
+		return api.post('/gallery/registerGallery', req);
 	},
 	getAllReviewPost: () => {
 		return api.get('/gallery/getAllReviewPost');

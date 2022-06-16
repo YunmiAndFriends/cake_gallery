@@ -2,7 +2,18 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { Content, Header, Menu, Button } from './cover_style';
-import { Gallery, Body, Frame, Frame2, Frame3, RText, RR, Img, GText } from './main_style';
+import {
+	Gallery,
+	Body,
+	Frame,
+	Frame2,
+	Frame3,
+	RText,
+	RR,
+	Img,
+	GText,
+	MoveButton,
+} from './main_style';
 import banner from '../../assets/banner.png';
 import HeaderBar from '../components/HeaderBar';
 import sendApi from '../../apis/sendApi';
@@ -88,7 +99,8 @@ function Main() {
 				<Frame>
 					<Gallery>
 						<GText>
-							더 많은 갤러리
+							더 많은 갤러리를 살펴보세요
+							<br />
 							<br />
 							♥︎구경가기♥︎
 						</GText>
@@ -107,17 +119,19 @@ function Main() {
 					</Frame2>
 				</Frame>
 				<RR>
-					<RText>= = = = 인기 후기글 = = = =</RText>
-					<Button onClick={click4}>더보기</Button>
+					<RText>
+						• • • • • 최신 후기글
+						<MoveButton onClick={click4}>+</MoveButton>• • • • •
+					</RText>
 				</RR>
 
 				<Frame3>
-					{reviewData.map(gallery => (
+					{recPostData.map(gallery => (
 						<ReviewData
 							key={gallery.id}
-							name={gallery.name}
-							thumbnail={gallery.thumbnail}
-							content={gallery.content}
+							name={gallery.title}
+							thumbnail={gallery.imgUrl}
+							content={gallery.writer}
 							id={gallery.id}
 						/>
 					))}

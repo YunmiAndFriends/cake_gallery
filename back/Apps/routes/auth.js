@@ -3,6 +3,7 @@ const passport = require("passport");
 const bcrypt = require("bcrypt");
 const { isLoggedIn, isNotLoggedIn } = require("./middlewares");
 const User = require("../../libs/models/user");
+const Gallery = require("../../libs/models/gallery");
 
 const router = express.Router();
 
@@ -55,10 +56,18 @@ router.post("/login", isNotLoggedIn, (req, res, next) => {
     if (!user) {
       return res.send(info.message);
     }
-    return req.login(user, (loginError) => {
+    return req.login(user, async (loginError) => {
       if (loginError) {
         console.error(loginError);
         return next(loginError);
+      }
+      if(user.userType==="director"){
+        const galleryData = await Gallery.findAll({where: {userKey: user.userKey}})
+        if(galleryData.length){
+          return res.send("ok");
+        }else{
+         return res.send("open");
+        }
       }
       return res.send("ok");
     });

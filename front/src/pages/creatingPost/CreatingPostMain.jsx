@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import PostingForm from './PostingForm';
 import HeaderBar from '../components/HeaderBar';
+import sendApi from '../../apis/sendApi';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Wrapper = styled.div`
 	display: flex;
@@ -53,6 +55,7 @@ const SendButton = styled.button`
 `;
 
 const CreatingPost = () => {
+	const navigate = useNavigate();
 	const [form, setForm] = useState({
 		title: '',
 		content: '',
@@ -65,14 +68,23 @@ const CreatingPost = () => {
 			...form,
 			[e.target.name]: e.target.value,
 		});
+		console.log('변경값 확인', e.target.name, form[e.target.name]);
 	};
 
-	const cancel = () => {
-		console.log('cancle');
-	};
-
-	const send = () => {
-		console.log('send', form);
+	const onClickPosting = async () => {
+		const { data } = await sendApi.getPosting({
+			title: form.title,
+			aontent: form.content,
+			img: form.imgUrl,
+			userKey: localStorage.getItem('userId'),
+			storeName: form.storeName,
+		});
+		if (data === 'ok') {
+			console.log('send', form);
+			navigate('/main');
+		} else {
+			alert('모든 값을 입력하지 않았습니다.');
+		}
 	};
 
 	return (
@@ -81,8 +93,8 @@ const CreatingPost = () => {
 			<MainWrapper>
 				<PostingForm onChangeForm={onChangeForm} formData={form} />
 				<ButtonWrap>
-					<SendButton onClick={() => send()}>게시글 작성</SendButton>
-					<SendButton onClick={() => cancel()}>작성 취소</SendButton>
+					<SendButton onClick={onClickPosting}>게시글 작성</SendButton>
+					<SendButton onClick={onClickPosting}>작성 취소</SendButton>
 				</ButtonWrap>
 			</MainWrapper>
 		</Wrapper>

@@ -6,18 +6,24 @@ const RandomGalleryWrap = styled.div`
 	padding-left: 32px;
 `;
 const ThumbnailImg = styled.img`
-	width: 100px;
-	height: 100px;
+	width: 132px;
+	height: 120px;
 	border-radius: 12px;
 `;
 const Store = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	justify-content: center;
 	padding-left: 40px;
+	justify-content: flex-start;
+	padding-top: 8px;
 `;
-const Storename = styled.div``;
-const Storeinfo = styled.div``;
+const Storename = styled.div`
+	font-size: 24px;
+	font-weight: bold;
+`;
+const Storeinfo = styled.div`
+	text-align: start;
+`;
 
 export { RandomGalleryWrap, ThumbnailImg, Storename, Storeinfo, Store };
