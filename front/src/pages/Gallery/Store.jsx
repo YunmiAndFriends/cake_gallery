@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
 	Container,
@@ -26,70 +26,81 @@ import StoreReview from './StoreReview';
 import StoreInfoData from './StoreInfoData';
 import { BiPhotoAlbum } from 'react-icons/bi';
 import { AiFillEdit } from 'react-icons/ai';
+import sendApi from '../../apis/sendApi';
 
-const infoData = [
-	{
-		id: 0,
-		name: '졸프의 노예 케이크',
-		content: '경기도 군포시 한세로 30',
-	},
-];
+const gallery = {
+	id: 0,
+	name: '졸프의 노예 케이크',
+	content: '경기도 군포시 한세로 30',
+};
 
 const Store = () => {
 	const [viewGallery, setViewGallery] = useState(true);
+	const [storeGalleryData, setStoreGalleryData] = useState(null);
+	async function api(id) {
+		const { data } = await sendApi.getStore({ selectedId: id });
+		setStoreGalleryData(data);
+		console.log('store', data);
+	}
 
-	return (
-		<Container>
-			<Header>
-				<Link to="/">
-					<Logo>main</Logo>
-				</Link>
-				<Menu>
-					<Link to="/mypage">
-						<Mypage>Mypage</Mypage>
+	useEffect(() => {
+		const idData = window.location.href.split('=');
+		api(idData[1]);
+	}, []);
+
+	if (storeGalleryData) {
+		return (
+			<Container>
+				<Header>
+					<Link to="/">
+						<Logo>main</Logo>
 					</Link>
-					<Link to="login">
-						<Login>Login</Login>
-					</Link>
-				</Menu>
-			</Header>
-			<Content>
-				<StoreIntro>
-					<StoreInfopage>
-						<StoreInfoImage src={profile} />
-						<StoreInfo>
-							{infoData.map(gallery => (
+					<Menu>
+						<Link to="/mypage">
+							<Mypage>Mypage</Mypage>
+						</Link>
+						<Link to="login">
+							<Login>Login</Login>
+						</Link>
+					</Menu>
+				</Header>
+				<Content>
+					<StoreIntro>
+						<StoreInfopage>
+							<StoreInfoImage profile={storeGalleryData.imgUrl} />
+
+							<StoreInfo>
 								<StoreInfoData
-									key={gallery.id}
-									name={gallery.name}
-									thumbnail={gallery.thumbnail}
-									content={gallery.content}
-									id={gallery.id}
+									key={storeGalleryData.id}
+									name={storeGalleryData.name}
+									intro={storeGalleryData.introduction}
+									content={storeGalleryData.address}
+									id={storeGalleryData.id}
 								/>
-							))}
-						</StoreInfo>
-					</StoreInfopage>
-					<StoreMenuButton>
-						<MenuButton>❤</MenuButton>
-						<MenuButton2>Message</MenuButton2>
-					</StoreMenuButton>
-				</StoreIntro>
-				<SelectButton>
-					<GalleryIcon onClick={() => setViewGallery(true)}>
-						<BiPhotoAlbum size="50" color="#c15f5bda" />
-					</GalleryIcon>
-					|
-					<ReviewIcon onClick={() => setViewGallery(false)}>
-						<AiFillEdit color="#c15f5bda" size="50" />
-					</ReviewIcon>
-				</SelectButton>
-				<StoreGalleryReview>
-					{' '}
-					{viewGallery ? <StoreGallery /> : <StoreReview />}{' '}
-				</StoreGalleryReview>
-			</Content>
-		</Container>
-	);
+							</StoreInfo>
+						</StoreInfopage>
+						<StoreMenuButton>
+							<MenuButton>❤</MenuButton>
+							<MenuButton2>Message</MenuButton2>
+						</StoreMenuButton>
+					</StoreIntro>
+					<SelectButton>
+						<GalleryIcon onClick={() => setViewGallery(true)}>
+							<BiPhotoAlbum size="50" color="#c15f5bda" />
+						</GalleryIcon>
+						|
+						<ReviewIcon onClick={() => setViewGallery(false)}>
+							<AiFillEdit color="#c15f5bda" size="50" />
+						</ReviewIcon>
+					</SelectButton>
+					<StoreGalleryReview>
+						{' '}
+						{viewGallery ? <StoreGallery /> : <StoreReview />}{' '}
+					</StoreGalleryReview>
+				</Content>
+			</Container>
+		);
+	}
 };
 
 export default Store;

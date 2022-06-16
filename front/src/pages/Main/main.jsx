@@ -51,6 +51,7 @@ const reviewData = [
 function Main() {
 	const navigate = useNavigate();
 	const [recGalleryData, setRecGalleryData] = useState([]);
+	const [recPostData, setRecPostData] = useState([]);
 
 	const click = () => {
 		navigate('/mypage');
@@ -68,18 +69,16 @@ function Main() {
 	};
 
 	const apidData = async () => {
-		const { data } = await sendApi.getRecentlyGallery();
-		setRecGalleryData(data);
+		const recGalleryValue = await sendApi.getRecentlyGallery();
+		setRecGalleryData(recGalleryValue.data);
+
+		const recPostValue = await sendApi.getRecentlyReviewPost();
+		setRecPostData(recPostValue.data);
 	};
 
 	useEffect(() => {
 		apidData();
 	}, []);
-
-	// let navigate = useNavigate();
-	// function click() {
-	// 	navigate('/mypage');
-	// }
 
 	return (
 		<Content>
@@ -88,9 +87,11 @@ function Main() {
 				<Img src={banner} />
 				<Frame>
 					<Gallery>
-						<GText>더 많은 갤러리</GText>
-						<br />
-						<GText>♥︎구경가기♥︎</GText>
+						<GText>
+							더 많은 갤러리
+							<br />
+							♥︎구경가기♥︎
+						</GText>
 						<Button onClick={click3}>이동</Button>
 					</Gallery>
 					<Frame2>
@@ -111,7 +112,7 @@ function Main() {
 				</RR>
 
 				<Frame3>
-					{reviewData.map(gallery => (
+					{recPostData.map(gallery => (
 						<ReviewData
 							key={gallery.id}
 							name={gallery.name}

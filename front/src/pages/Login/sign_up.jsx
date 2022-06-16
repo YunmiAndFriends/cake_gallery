@@ -36,7 +36,7 @@ function Sign_up() {
 			password: userInfo.pw,
 			name: userInfo.userName,
 			birthday: userInfo.birthday,
-			userType: 'client',
+			userType: 'director',
 			email: userInfo.email,
 			mobile: userInfo.hp,
 		});

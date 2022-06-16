@@ -44,6 +44,7 @@ const Gallery = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	/* border: dotted; */
 `;
 
 const Body = styled.div`
@@ -58,7 +59,7 @@ const GText = styled.div`
 	display: flex;
 	flex-direction: column;
 	text-align: center;
-	padding-left: 40px;
+	/* padding-left: 40px; */
 `;
 
 const RText = styled.div`

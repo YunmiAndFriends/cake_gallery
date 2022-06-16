@@ -54,7 +54,12 @@ const StoreInfopage = styled.div`
 `;
 
 const StoreInfoImage = styled.div`
-	background-image: url(${profile});
+	background-image: ${props => {
+		return `url(${props.profile})`;
+	}};
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
 	width: 280px;
 	height: 280px;
 	border-radius: 70%;
