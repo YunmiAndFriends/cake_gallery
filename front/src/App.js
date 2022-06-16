@@ -13,6 +13,7 @@ import AllReview from './pages/Review/AllReview';
 import BoardMain from './pages/board/BoardMain';
 import Review from './pages/Review/review_write';
 import CreatingPost from './pages/creatingPost/CreatingPostMain';
+import GalleryMain from './pages/Gallery/GalleryMain';
 
 function App() {
 	return (
@@ -32,6 +33,7 @@ function App() {
 				<Route path="/Store" element={<Store />} />
 				<Route path="/AllReview" element={<AllReview />} />
 				<Route path="/ReviewDetailes" element={<BoardMain />} />
+				<Route path="/GalleryDetailes" element={<GalleryMain />} />
 			</Routes>
 		</BrowserRouter>
 	);
