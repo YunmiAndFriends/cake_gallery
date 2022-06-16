@@ -64,6 +64,7 @@ const SendButton = styled.button`
 
 const GalleryDetail = () => {
 	const navigate = useNavigate();
+
 	const back = () => {
 		navigate('/AllGallery');
 	};
