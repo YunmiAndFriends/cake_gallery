@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Content, Header, Menu, Button } from './cover_style';
 import { Gallery, Body, Frame, Frame2, Frame3, RText, RR, Img, GText } from './main_style';
 import banner from '../../assets/banner.png';
+import HeaderBar from '../components/HeaderBar';
 import sendApi from '../../apis/sendApi';
 import RandomGalleryData from './RandomGalleryData';
 import ReviewData from './ReviewData';
@@ -50,6 +51,7 @@ const reviewData = [
 function Main() {
 	const navigate = useNavigate();
 	const [recGalleryData, setRecGalleryData] = useState([]);
+	const [recPostData, setRecPostData] = useState([]);
 
 	const click = () => {
 		navigate('/mypage');
@@ -67,38 +69,29 @@ function Main() {
 	};
 
 	const apidData = async () => {
-		const { data } = await sendApi.getRecentlyGallery();
-		setRecGalleryData(data);
+		const recGalleryValue = await sendApi.getRecentlyGallery();
+		setRecGalleryData(recGalleryValue.data);
+
+		const recPostValue = await sendApi.getRecentlyReviewPost();
+		setRecPostData(recPostValue.data);
 	};
 
 	useEffect(() => {
 		apidData();
 	}, []);
 
-	// let navigate = useNavigate();
-	// function click() {
-	// 	navigate('/mypage');
-	// }
-
 	return (
 		<Content>
-			<Header>
-				<Menu>
-					{/* <Mypage> */}
-					<Button onClick={click}>Mypage</Button>
-					{/* </Mypage> */}
-					{/* <Login> */}
-					<Button onClick={click2}>Login</Button>
-					{/* </Login> */}
-				</Menu>
-			</Header>
+			<HeaderBar />
 			<Body>
 				<Img src={banner} />
 				<Frame>
 					<Gallery>
-						<GText>더 많은 갤러리</GText>
-						<br />
-						<GText>♥︎구경가기♥︎</GText>
+						<GText>
+							더 많은 갤러리
+							<br />
+							♥︎구경가기♥︎
+						</GText>
 						<Button onClick={click3}>이동</Button>
 					</Gallery>
 					<Frame2>

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import BoardDetail from './BoardDetail';
+import HeaderBar from '../components/HeaderBar';
 
 const Wrapper = styled.div`
 	display: flex;
@@ -11,6 +12,7 @@ const Wrapper = styled.div`
 const BoardMain = () => {
 	return (
 		<Wrapper>
+			<HeaderBar />
 			<BoardDetail />
 		</Wrapper>
 	);

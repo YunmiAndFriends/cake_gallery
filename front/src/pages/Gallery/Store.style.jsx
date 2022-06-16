@@ -32,7 +32,9 @@ const Login = styled.button`
 `;
 
 const Content = styled.div`
-	margin-top: 60px;
+	border-top: 3px solid #434d43ac;
+	margin-top: 16px;
+	padding-top: 32px;
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
@@ -54,7 +56,12 @@ const StoreInfopage = styled.div`
 `;
 
 const StoreInfoImage = styled.div`
-	background-image: url(${profile});
+	background-image: ${props => {
+		return `url(${props.profile})`;
+	}};
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
 	width: 280px;
 	height: 280px;
 	border-radius: 70%;

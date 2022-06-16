@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PostingForm from './PostingForm';
+import HeaderBar from '../components/HeaderBar';
 
 const Wrapper = styled.div`
 	display: flex;
@@ -11,7 +12,7 @@ const Wrapper = styled.div`
 const MainWrapper = styled.div`
 	background-color: white;
 	width: 80%;
-	margin-top: 88px;
+	margin-top: 48px;
 	border-radius: 24px;
 	box-shadow: 4px 8px 8px 2px rgba(0, 0, 0, 0.26);
 	padding: 56px;
@@ -76,6 +77,7 @@ const CreatingPost = () => {
 
 	return (
 		<Wrapper>
+			<HeaderBar />
 			<MainWrapper>
 				<PostingForm onChangeForm={onChangeForm} formData={form} />
 				<ButtonWrap>

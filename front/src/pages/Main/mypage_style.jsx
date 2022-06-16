@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 const Frame = styled.div`
+	margin-top: 8px;
 	padding-top: 40px;
 	padding-bottom: 40px;
+	width: 100vw;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
