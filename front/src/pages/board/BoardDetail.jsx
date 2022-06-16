@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const DetailWrapper = styled.div`
 	background-color: white;
 	width: 80%;
-	margin-top: 88px;
+	margin-top: 48px;
 	border-radius: 24px;
 	box-shadow: 6px 8px 4px 0 rgba(0, 0, 0, 0.26);
 	padding: 56px;

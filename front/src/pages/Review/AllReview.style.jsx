@@ -34,6 +34,9 @@ const Content = styled.div`
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
+	border-top: 3px solid #434d43ac;
+	margin-top: 16px;
+	padding-top: 16px;
 `;
 const ReviewBanner = styled.div`
 	display: flex;

@@ -13,6 +13,7 @@ import {
 } from './AllReview.style';
 import AllReviewData from './AllReviewData';
 import sendApi from '../../apis/sendApi';
+import HeaderBar from '../components/HeaderBar';
 
 // const reviewData = [
 // 	{
@@ -80,19 +81,7 @@ const AllReview = () => {
 	}, []);
 	return (
 		<Container>
-			<Header>
-				<Link to="/">
-					<Logo>main</Logo>
-				</Link>
-				<Menu>
-					<Link to="/mypage">
-						<Mypage>Mypage</Mypage>
-					</Link>
-					<Link to="login">
-						<Login>Login</Login>
-					</Link>
-				</Menu>
-			</Header>
+			<HeaderBar />
 			<Content>
 				<ReviewBanner>Review</ReviewBanner>
 				<ReviewContent>
