@@ -4,7 +4,7 @@ import banner from '../../assets/banner.png';
 const Img = styled.div`
 	background-image: url(${banner});
 	background-size: contain;
-	width: 100%;
+	width: 100vw;
 	height: 328px;
 `;
 

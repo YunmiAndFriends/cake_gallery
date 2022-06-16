@@ -1,15 +1,16 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react';
 import { Content, Header, Menu, Mypage, Login, Body, Button, Text, TextWrap } from './cover_style';
-import { Link } from 'react-router-dom';
-
-const click = () => {
-	document.location.href('/main');
-};
-const click2 = () => {
-	document.location.href('/login');
-};
+import { Link, useNavigate } from 'react-router-dom';
 
 const cover = () => {
+	const navigate = useNavigate();
+	const click = () => {
+		navigate('/main');
+	};
+	const click2 = () => {
+		navigate('/login');
+	};
 	return (
 		<Content>
 			{/* <Header>

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Content, Header, Menu, Button } from './cover_style';
 import { Gallery, Body, Frame, Frame2, Frame3, RText, RR, Img, GText } from './main_style';
 import banner from '../../assets/banner.png';
+import HeaderBar from '../components/HeaderBar';
 import sendApi from '../../apis/sendApi';
 import RandomGalleryData from './RandomGalleryData';
 import ReviewData from './ReviewData';
@@ -82,16 +83,7 @@ function Main() {
 
 	return (
 		<Content>
-			<Header>
-				<Menu>
-					{/* <Mypage> */}
-					<Button onClick={click}>Mypage</Button>
-					{/* </Mypage> */}
-					{/* <Login> */}
-					<Button onClick={click2}>Login</Button>
-					{/* </Login> */}
-				</Menu>
-			</Header>
+			<HeaderBar />
 			<Body>
 				<Img src={banner} />
 				<Frame>

@@ -37,6 +37,7 @@ function login_page() {
 			password: loginPw,
 		});
 		if (data === 'ok') {
+			localStorage.setItem('userId', loginId);
 			navigate('/main');
 		} else {
 			alert('잘못된 정보입니다.');
