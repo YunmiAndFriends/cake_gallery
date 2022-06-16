@@ -23,4 +23,7 @@ export default {
 	getPosting: req => {
 		return api.post(`/post/createReviewPosting`, req);
 	},
+	registerGallery: req => {
+		return api.post('/gallery/registerGallery', req);
+	},
 };

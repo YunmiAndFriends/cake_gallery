@@ -8,7 +8,6 @@ import {
 } from './style_RandomGalleryData';
 
 const RandomGalleryData = ({ id, name, thumbnail, content }) => {
-	console.log('ThumbnamilImg', thumbnail);
 	return (
 		<RandomGalleryWrap>
 			<ThumbnailImg src={thumbnail} />

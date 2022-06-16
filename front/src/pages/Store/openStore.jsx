@@ -24,7 +24,6 @@ function openStore() {
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const [galleryInfo, setGalleryInfo] = useState({
 		name: '',
-		id: '',
 		address: '',
 		introduction: '',
 		imageurl: '',
@@ -42,7 +41,6 @@ function openStore() {
 		if (
 			!(
 				galleryInfo.address.length &&
-				galleryInfo.id.length &&
 				galleryInfo.imageurl.length &&
 				galleryInfo.introduction.length &&
 				galleryInfo.name.length
@@ -50,12 +48,12 @@ function openStore() {
 		) {
 			alert('모든 필드를 채워주세요.');
 		} else {
-			const { data } = await sendApi.signUp({
+			const { data } = await sendApi.registerGallery({
 				name: galleryInfo.name,
-				address: galleryInfo.address,
-				introduction: galleryInfo.introduction,
-				imgUrl: galleryInfo.imageurl,
-				userKey: galleryInfo.id,
+				add: galleryInfo.address,
+				intro: galleryInfo.introduction,
+				img: galleryInfo.imageurl,
+				userKey: localStorage.getItem('userId'),
 			});
 			if (data === 'ok') {
 				navigate('/main');
@@ -75,10 +73,6 @@ function openStore() {
 					<InputDivWrap>
 						<Text>가게 이름</Text>
 						<Input type="text" name="name" onChange={onChangeGalleryInfo} />
-					</InputDivWrap>
-					<InputDivWrap>
-						<Text>사장님 아이디</Text>
-						<Input type="text" name="id" onChange={onChangeGalleryInfo} />
 					</InputDivWrap>
 					<InputDivWrap>
 						<Text>주소</Text>
