@@ -41,7 +41,7 @@ function Sign_up() {
 			mobile: userInfo.hp,
 		});
 		if (data === 'ok') {
-			navigate('/openstore');
+			navigate('/login');
 		} else {
 			alert(data);
 		}

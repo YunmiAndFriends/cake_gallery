@@ -39,6 +39,8 @@ function login_page() {
 		if (data === 'ok') {
 			localStorage.setItem('userId', loginId);
 			navigate('/main');
+		} else if (data === 'open') {
+			navigate('/openStore');
 		} else {
 			alert('잘못된 정보입니다.');
 		}

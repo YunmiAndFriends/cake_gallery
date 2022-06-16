@@ -59,6 +59,7 @@ const GText = styled.div`
 	display: flex;
 	flex-direction: column;
 	text-align: center;
+	margin: 24px;
 	/* padding-left: 40px; */
 `;
 

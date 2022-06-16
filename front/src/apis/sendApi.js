@@ -20,4 +20,7 @@ export default {
 	getStore: req => {
 		return api.get(`/gallery/getSelectGallery?selectedId=${req.selectedId}`);
 	},
+	registerGallery: req => {
+		return api.post('/gallery/registerGallery', req);
+	},
 };
