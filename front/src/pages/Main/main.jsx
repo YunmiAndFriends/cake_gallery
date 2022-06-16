@@ -112,7 +112,7 @@ function Main() {
 				</RR>
 
 				<Frame3>
-					{recPostData.map(gallery => (
+					{reviewData.map(gallery => (
 						<ReviewData
 							key={gallery.id}
 							name={gallery.name}

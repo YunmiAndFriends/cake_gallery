@@ -11,6 +11,7 @@ const HeaderWrap = styled.div`
 const LogoWrap = styled.div``;
 const LogoImg = styled.img`
 	width: 200px;
+	cursor: pointer;
 `;
 
 const ButtonWrap = styled.div`
@@ -20,7 +21,7 @@ const MoveButton = styled.div`
 	width: fit-content;
 	border: none;
 	font-size: 24px;
-	margin: 0 8px;
+	margin: 0 16px;
 	color: brown;
 	cursor: pointer;
 `;

@@ -20,6 +20,7 @@ import {
 	MenuButton,
 	MenuButton2,
 } from './Store.style';
+import HeaderBar from '../components/HeaderBar';
 import profile from '../../assets/storeProfile.jpg';
 import StoreGallery from './StoreGallery';
 import StoreReview from './StoreReview';
@@ -51,19 +52,7 @@ const Store = () => {
 	if (storeGalleryData) {
 		return (
 			<Container>
-				<Header>
-					<Link to="/">
-						<Logo>main</Logo>
-					</Link>
-					<Menu>
-						<Link to="/mypage">
-							<Mypage>Mypage</Mypage>
-						</Link>
-						<Link to="login">
-							<Login>Login</Login>
-						</Link>
-					</Menu>
-				</Header>
+				<HeaderBar />
 				<Content>
 					<StoreIntro>
 						<StoreInfopage>

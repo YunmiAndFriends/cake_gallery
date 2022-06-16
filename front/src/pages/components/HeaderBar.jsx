@@ -20,9 +20,12 @@ export default function HeaderBar() {
 		localStorage.removeItem('userId');
 		navigate('/');
 	};
+	const onClickMain = () => {
+		navigate('/Main');
+	};
 	return (
 		<HeaderWrap>
-			<LogoWrap>
+			<LogoWrap onClick={onClickMain}>
 				<LogoImg src={mainLogo} />
 			</LogoWrap>
 			<ButtonWrap>

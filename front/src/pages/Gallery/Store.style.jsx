@@ -32,7 +32,9 @@ const Login = styled.button`
 `;
 
 const Content = styled.div`
-	margin-top: 60px;
+	border-top: 3px solid #434d43ac;
+	margin-top: 16px;
+	padding-top: 32px;
 	display: flex;
 	flex-direction: column;
 	height: 100vh;

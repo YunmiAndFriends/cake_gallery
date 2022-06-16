@@ -15,27 +15,18 @@ import {
 	Img3,
 	Img4,
 } from './mypage_style';
-
+import HeaderBar from '../components/HeaderBar';
 import profile from '../../assets/_mypage_profile.png';
 import cake_profile from '../../assets/cake_pf.png';
 // import gallery_photo from '../../assets/profile.jpg';
 import bell from '../../assets/bell.png';
-<<<<<<< HEAD
 import gallery_photo from '../../assets/storeProfile.jpg';
-=======
 //import gallery_photo from '../../assets/storeProfile.jpg';
->>>>>>> 56f24cf51c340102a6be23fe19db7dff26d3d6a1
 
 const mypage = () => {
 	return (
 		<Content>
-			<Header>
-				<Menu>
-					<Mypage>Mypage</Mypage>
-					<Login>Login</Login>
-				</Menu>
-			</Header>
-
+			<HeaderBar />
 			<Body>
 				<Frame>
 					<Img src={profile} />
