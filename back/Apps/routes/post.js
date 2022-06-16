@@ -71,8 +71,7 @@ router.get("/getAllReviewPost", async (req, res) => {
 
 // 후기 포스팅 추가
 router.get("/createReviewPosting",isLoggedIn, async (req, res) => {
-  const { title, aontent, img, storeName} = req.body;
-  const userInfo = req.user;
+  const { title, aontent, img, storeName, writer} = req.body;
   const storeInfo = await Gallery.findOne({where: {name: storeName}})
 
   if(storeInfo === null) {
@@ -84,7 +83,7 @@ router.get("/createReviewPosting",isLoggedIn, async (req, res) => {
           title: title,
           content: aontent,
           imgUrl: img,
-          writer: userInfo.userKey,
+          writer: writer,
           storeName: storeInfo.get().storeName
         }
       );

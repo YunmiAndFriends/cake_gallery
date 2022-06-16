@@ -5,10 +5,11 @@ const ReviewWrap = styled.div`
 	flex-direction: column;
 	align-items: center;
 	padding-top: 16px;
+	margin: 32px;
 `;
 const ThumbnailImg = styled.img`
-	width: 100px;
-	height: 100px;
+	width: 200px;
+	height: 200px;
 	border-radius: 12px;
 	/* padding-bottom: 16px; */
 `;
