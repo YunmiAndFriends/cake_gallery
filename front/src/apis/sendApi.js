@@ -20,4 +20,10 @@ export default {
 	getStore: req => {
 		return api.get(`/gallery/getSelectGallery?selectedId=${req.selectedId}`);
 	},
+	getAllReviewPost: () => {
+		return api.get('/gallery/getAllReviewPost');
+	},
+	getReviewDetailes: req => {
+		return api.get(`/post/readReviewPost?selectedId=${req.selectedId}`);
+	},
 };

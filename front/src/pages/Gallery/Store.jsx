@@ -21,7 +21,6 @@ import {
 	MenuButton2,
 } from './Store.style';
 import HeaderBar from '../components/HeaderBar';
-import profile from '../../assets/storeProfile.jpg';
 import StoreGallery from './StoreGallery';
 import StoreReview from './StoreReview';
 import StoreInfoData from './StoreInfoData';
@@ -29,11 +28,11 @@ import { BiPhotoAlbum } from 'react-icons/bi';
 import { AiFillEdit } from 'react-icons/ai';
 import sendApi from '../../apis/sendApi';
 
-const gallery = {
-	id: 0,
-	name: '졸프의 노예 케이크',
-	content: '경기도 군포시 한세로 30',
-};
+// const gallery = {
+// 	id: 0,
+// 	name: '졸프의 노예 케이크',
+// 	content: '경기도 군포시 한세로 30',
+// };
 
 const Store = () => {
 	const [viewGallery, setViewGallery] = useState(true);
