@@ -19,7 +19,7 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/" element={<Cover />} />
+				<Route path="/" element={<ver />} />
 				<Route path="/login" element={<LoginPage />} />
 				<Route path="/openstore" element={<OpenStore />} />
 				<Route path="/customer_signup" element={<Customer />} />
